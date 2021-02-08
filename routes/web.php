@@ -1,6 +1,7 @@
 <?php
 
-use App\Http\Controllers\User\DashboardController;
+use App\Http\Controllers\PromoController;
+use App\Http\Controllers\Admin\AuthController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -22,6 +23,11 @@ Route::get('/user', function () {
     return view('pages.user.dashboard');
 });
 
-Route::get('/admin', function () {
-    return view('pages.admin.dashboard');
+Route::prefix(('admin'))
+    ->namespace('Admin')
+    ->group(function(){
+        Route::get('/', [AuthController::class, 'index'])
+            ->name('dashboard');
 });
+
+Route::resource('admin/promo', PromoController::class);
