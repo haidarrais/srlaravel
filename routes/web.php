@@ -26,14 +26,21 @@ Route::get('/user', function () {
     return view('pages.user.dashboard');
 });
 
-Route::prefix(('admin'))
-    ->namespace('Admin')
-    ->group(function(){
-        Route::get('/', [AuthController::class, 'index'])
-            ->name('dashboard');
-});
 
-Route::get('/admin/login',[AdminController::class, 'index'])->name("login");
+//cegah halaman admin diakses sebelum login
+Route::group(['middleware'=>['AuthCheck']], function(){
+    Route::get('/admin', [AuthController::class, 'index'])->name('dashboard');
+});
+// Route::prefix('admin')
+//     ->namespace('Admin')
+//     ->group(['middleware'=>['AuthCheck']],function(){
+//         
+// });
+
+//cegah admin yang sudah login mengakses halaman login
+Route::group(['middleware'=>['DoubleLogin']], function(){
+    Route::get('/admin/login',[AdminController::class, 'index'])->name("login");
+});
 Route::post('/admin/login',[AdminController::class, 'signin']);
 Route::get('/admin/logout',[AdminController::class, 'signout'])->name('logout');
 

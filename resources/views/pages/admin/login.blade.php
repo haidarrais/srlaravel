@@ -23,7 +23,7 @@
               <form action="{{route('login')}}" method="post">
                 @csrf
                 @if (Session::get('fail'))
-                  <div>
+                  <div class="text-danger text-center ">
                     {{Session::get('fail')}}
                   </div>        
                 @endif
@@ -34,7 +34,7 @@
                     placeholder="username" 
                     name="username"
                   >
-                  <div>@error('username')
+                  <div class=" alert-danger small text-center rounded-bottom">@error('username')
                     {{$message}}
                   @enderror
                   </div>
@@ -46,7 +46,7 @@
                   placeholder="Password" 
                   name="password"
                   >
-                  <div>@error('password')
+                  <div class=" alert-danger  text-center rounded-bottom">@error('password')
                     {{$message}}
                     @enderror
                   </div>
