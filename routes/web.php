@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\User\DashboardController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,4 +16,12 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
+});
+
+Route::get('/user', function () {
+    return view('pages.user.dashboard');
+});
+
+Route::get('/admin', function () {
+    return view('pages.admin.dashboard');
 });
