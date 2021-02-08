@@ -1,5 +1,8 @@
 <?php
 
+
+use App\Http\Controllers\AdminController;
+
 use App\Http\Controllers\PromoController;
 use App\Http\Controllers\Admin\AuthController;
 use Illuminate\Support\Facades\Route;
@@ -30,4 +33,9 @@ Route::prefix(('admin'))
             ->name('dashboard');
 });
 
+
+Route::get('/admin/login',[AdminController::class, 'index'])->name("login");
+Route::post('/admin/login',[AdminController::class, 'signin']);
+Route::get('/admin/logout',[AdminController::class, 'signout'])->name('logout');
 Route::resource('admin/promo', PromoController::class);
+
