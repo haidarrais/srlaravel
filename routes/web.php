@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\User\DashboardController;
 use Illuminate\Support\Facades\Route;
 
@@ -25,3 +26,8 @@ Route::get('/user', function () {
 Route::get('/admin', function () {
     return view('pages.admin.dashboard');
 });
+
+
+Route::get('/admin/login',[AdminController::class, 'index'])->name("login");
+Route::post('/admin/login',[AdminController::class, 'signin']);
+Route::get('/admin/logout',[AdminController::class, 'signout'])->name('logout');
