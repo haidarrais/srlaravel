@@ -33,9 +33,9 @@ Route::prefix(('admin'))
             ->name('dashboard');
 });
 
-
 Route::get('/admin/login',[AdminController::class, 'index'])->name("login");
 Route::post('/admin/login',[AdminController::class, 'signin']);
 Route::get('/admin/logout',[AdminController::class, 'signout'])->name('logout');
+
 Route::resource('admin/promo', PromoController::class);
 
