@@ -1,5 +1,8 @@
 <?php
 
+
+use App\Http\Controllers\AdminController;
+
 use App\Http\Controllers\Content\PromoController;
 use App\Http\Controllers\Content\TravelController;
 use App\Http\Controllers\Admin\AuthController;
@@ -27,13 +30,23 @@ Route::prefix(('user'))
         Route::get('/', [ContentController::class, 'index'])
             ->name('dashboard');
 });
-
-Route::prefix(('admin'))
-    ->namespace('Admin')
-    ->group(function(){
-        Route::get('/dashboard', [AuthController::class, 'index'])
-            ->name('dashboard');
+//cegah halaman admin diakses sebelum login
+Route::group(['middleware'=>['AuthCheck']], function(){
+    Route::get('/admin', [AuthController::class, 'index'])->name('dashboard');
 });
+// Route::prefix('admin')
+//     ->namespace('Admin')
+//     ->group(['middleware'=>['AuthCheck']],function(){
+//
+// });
+
+//cegah admin yang sudah login mengakses halaman login
+Route::group(['middleware'=>['DoubleLogin']], function(){
+    Route::get('/admin/login',[AdminController::class, 'index'])->name("login");
+});
+Route::post('/admin/login',[AdminController::class, 'signin']);
+Route::get('/admin/logout',[AdminController::class, 'signout'])->name('logout');
 
 Route::resource('admin/promo', PromoController::class);
 Route::resource('admin/travel', TravelController::class);
+
