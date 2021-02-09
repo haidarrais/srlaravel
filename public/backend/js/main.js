@@ -80,16 +80,17 @@ const sr = ScrollReveal({
 sr.reveal(`.home__data, .home__img, 
            .promo__data,
            .travel__content,
+           .slideshow-container,
            .footer__content`, {
     origin: 'top',
     interval: 200,
 })
 
-sr.reveal(`.share__img, .invest__content`, {
+sr.reveal(`.share__img,`, {
     origin: 'left'
 })
 
-sr.reveal(`.share__data, .invest__img`, {
+sr.reveal(`.share__data,`, {
     origin: 'right'
 })
 
