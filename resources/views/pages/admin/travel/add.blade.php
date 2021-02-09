@@ -13,25 +13,25 @@
 
         <!-- Nav Item - Dashboard -->
         <li class="nav-item">
-            <a class="nav-link" href="index.html">
+            <a class="nav-link" href="/admin">
                 <i class="fas fa-fw fa-tachometer-alt"></i>
                 <span>Dashboard</span></a>
         </li>
 
         <li class="nav-item">
-            <a class="nav-link" href="index.html">
+            <a class="nav-link" href="/admin/promo">
                 <i class="fas fa-fw fa-hotel"></i>
                 <span>Promo</span></a>
         </li>
 
         <li class="nav-item active">
-            <a class="nav-link" href="index.html">
+            <a class="nav-link" href="/admin/travel">
                 <i class="fas fa-fw fa-images"></i>
-                <span>Tour Travel/Add</span></a>
+                <span>Tour Travel/<strong>Add</strong></span></a>
         </li>
 
         <li class="nav-item">
-            <a class="nav-link" href="index.html">
+            <a class="nav-link" href="/admin/investment">
                 <i class="fas fa-fw fa-dollar-sign"></i>
                 <span>Investment</span></a>
         </li>
