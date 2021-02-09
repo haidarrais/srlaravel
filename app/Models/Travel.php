@@ -7,10 +7,12 @@ use Illuminate\Database\Eloquent\Model;
 
 class Travel extends Model
 {
+    protected $table = 'travels';
     protected $fillable = [
         'title',
         'travel_code',
         'image',
+        'price',
         'description',
         'expired',
        ];

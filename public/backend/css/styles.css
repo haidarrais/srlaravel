@@ -293,7 +293,7 @@ img {
 
 /*========== PROMO ==========*/
 .promo__container {
-  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  grid-template-columns:repeat(auto-fit, minmax(230px, 300px));
 }
 .promo__data {
   position: relative;
@@ -337,7 +337,7 @@ img {
 
 /*========== TRAVEL ==========*/
 .travel__container {
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns:repeat(2, 1fr);
   padding-bottom: 2rem;
 }
 .travel__content {
@@ -417,7 +417,7 @@ img {
 
 /*========== FOOTER ==========*/
 .footer__container {
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns:repeat(auto-fit, minmax(230px, 300px));
 }
 .footer__logo {
   color: var(--title-color);
@@ -519,7 +519,7 @@ img {
   }
 
   .travel__container {
-    grid-template-columns: repeat(3, 224px);
+    grid-template-columns:repeat(3, 224px);
     justify-content: center;
   }
   .travel__content {
