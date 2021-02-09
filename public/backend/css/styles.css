@@ -298,7 +298,6 @@ img {
 .promo__data {
   position: relative;
   text-align: center;
-  padding: 1rem 1rem 2rem;
   background-color: var(--container-color);
   box-shadow: 0 2px 6px rgba(65, 11, 16, 0.15);
   border-radius: 1rem;
@@ -307,7 +306,8 @@ img {
   box-shadow: 0 3px 12px rgba(65, 11, 16, 0.15);
 }
 .promo__img {
-  width: 280px;
+  height: 200px;
+  overflow: hidden;
   border-top-left-radius: 0.5rem;
   border-top-right-radius: 0.5rem;
 }
