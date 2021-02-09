@@ -80,15 +80,44 @@ const sr = ScrollReveal({
 sr.reveal(`.home__data, .home__img, 
            .promo__data,
            .travel__content,
+           .slideshow-container,
            .footer__content`, {
     origin: 'top',
     interval: 200,
 })
 
-sr.reveal(`.share__img, .invest__content`, {
+sr.reveal(`.share__img,`, {
     origin: 'left'
 })
 
-sr.reveal(`.share__data, .invest__img`, {
+sr.reveal(`.share__data,`, {
     origin: 'right'
 })
+
+
+/**
+ * ------- carousel -----------
+ */
+var slideIndex = 1;
+showSlides(slideIndex);
+
+// Next/previous controls
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+// Thumbnail image controls
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+  }
+  slides[slideIndex-1].style.display = "block";
+} 
