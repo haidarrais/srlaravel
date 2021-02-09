@@ -42,6 +42,7 @@ class TravelController extends Controller
         $request->validate([
             'title' => 'required',
             'travel_code' => 'required',
+            'price' => 'required',
             'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'description' => 'required',
             ]);
@@ -51,7 +52,9 @@ class TravelController extends Controller
                 $insert['image'] = "$travelImage";
                 $files->move($destinationPath, $travelImage);
             }
+            $formattedPrice = number_format($request->get('price'), 2, ',', '.');
             $insert['title'] = $request->get('title');
+            $insert['price'] = (string)$formattedPrice;
             $insert['travel_code'] = $request->get('travel_code');
             $insert['expired'] = $request->get('expired');
             $insert['description'] = $request->get('description');

@@ -69,6 +69,13 @@
     </div>
     </div>
     <div class="col-md-12">
+        <div class="form-group">
+        <strong>Price</strong>
+        <input type="number" min="50000" step="any" class="form-control" name="price"/>
+        <span class="text-danger">{{ $errors->first('price') }}</span>
+        </div>
+    </div>
+    <div class="col-md-12">
     <div class="form-group">
     <strong>Description</strong>
     <textarea class="form-control" col="4" name="description" placeholder="Enter Description"></textarea>

@@ -17,6 +17,7 @@ class CreateTravelsTable extends Migration
             $table->increments('id');
             $table->string('title');
             $table->string('travel_code');
+            $table->string('price');
             $table->text('image');
             $table->text('description');
             $table->date('expired');

@@ -89,7 +89,12 @@
                         <img src="{{ url('/asset/img') . '/' . $travel->image }}" alt="" class="promo__img">
                         <h3 class="travel__title">{{$travel->title}}</h3>
                         <span class="travel__category">travel</span><br>
-                        <span class="travel__preci">$9.45</span>
+                        <span class="travel__preci">
+                            {{ $travel->price }}
+                            <span style="font-size: 10px;font-weight:400">
+                                IDR
+                            </span>
+                        </span>
                         <a href="#" class="button travel__button"><i class='bx bxs-plane-alt'></i></a>
                     </div>
                     @endforeach
