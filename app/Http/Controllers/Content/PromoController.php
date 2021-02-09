@@ -1,6 +1,7 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Content;
+use App\Http\Controllers\Controller;
 use App\Models\Promo;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -41,7 +42,7 @@ class PromoController extends Controller
         $request->validate([
             'title' => 'required',
             'promo_code' => 'required',
-            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:512',
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'description' => 'required',
             ]);
             if ($files = $request->file('image')) {

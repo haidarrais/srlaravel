@@ -61,75 +61,38 @@
             <section class="promo section bd-container" id="promo">
                 <h2 class="section-title">Program & Promo</h2>
                 <div class="promo__container bd-grid">
-                    <div class="promo__data">
-                        <img src="{{ url('backend/img/promo.jpg') }}" alt="" class="promo__img">
-                        <h3 class="promo__title">Stay 2 Nights Pay 1 Night</h3>
-                        <div href="#" class="button promo__deadline">2 Days Left</i></div>
-                        <a href="#" class="button promo__button"><i class='bx bxs-cart'></i></a>
-                    </div>
+                    @foreach($promo as $promo)
+                    <?php
+                        $datestr=$promo->expired;
+                        $date=strtotime($datestr);//Converted to a PHP date (a second count)
 
+                        //Calculate difference
+                        $diff=$date-time();//time returns current time in seconds
+                        $days=floor($diff/(60*60*24));//seconds/minute*minutes/hour*hours/day)
+                        $hours=round(($diff-$days*60*60*24)/(60*60));
+                    ?>
                     <div class="promo__data">
-                        <img src="{{ url('backend/img/promo.jpg') }}" alt="" class="promo__img">
-                        <h3 class="promo__title">Stay 2 Nights Pay 1 Night</h3>
-                        <div href="#" class="button promo__deadline">2 Days Left</i></div>
+                        <img src="{{ url('/asset/img') . '/' . $promo->image }}" alt="" class="promo__img">
+                        <h3 class="promo__title">{{$promo->title}}</h3>
+                        <div href="#" class="button promo__deadline">{{ $days . 'hari ' . $hours. 'jam' }}</i></div>
                         <a href="#" class="button promo__button"><i class='bx bxs-cart'></i></a>
                     </div>
-
-                    <div class="promo__data">
-                        <img src="{{ url('backend/img/promo.jpg') }}" alt="" class="promo__img">
-                        <h3 class="promo__title">Stay 2 Nights Pay 1 Night</h3>
-                        <div href="#" class="button promo__deadline">2 Days Left</i></div>
-                        <a href="#" class="button promo__button"><i class='bx bxs-cart'></i></a>
-                    </div>
-                    <div class="promo__data">
-                        <img src="{{ url('backend/img/promo.jpg')}}" alt="" class="promo__img">
-                        <h3 class="promo__title">Stay 2 Nights Pay 1 Night</h3>
-                        <div href="#" class="button promo__deadline">2 Days Left</i></div>
-                        <a href="#" class="button promo__button"><i class='bx bxs-cart'></i></a>
-                    </div>
+                    @endforeach
                 </div>
             </section>
              <!--========== TRAVEL ==========-->
              <section class="promo section bd-container" id="travel">
                 <h2 class="section-title">Tour and Travel</h2>
                 <div class="promo__container bd-grid">
+                    @foreach($travel as $travel)
                     <div class="promo__data">
-                        <img src="{{ url('backend/img/travel.png') }}" alt="" class="promo__img">
-                        <h3 class="travel__title">Solo Travel</h3>
+                        <img src="{{ url('/asset/img') . '/' . $travel->image }}" alt="" class="promo__img">
+                        <h3 class="travel__title">{{$travel->title}}</h3>
                         <span class="travel__category">travel</span><br>
                         <span class="travel__preci">$9.45</span>
                         <a href="#" class="button travel__button"><i class='bx bxs-plane-alt'></i></a>
                     </div>
-
-                    <div class="promo__data">
-                        <img src="{{ url('backend/img/travel.png') }}" alt="" class="promo__img">
-                        <h3 class="travel__title">Solo Travel</h3>
-                        <span class="travel__category">travel</span><br>
-                        <span class="travel__preci">$9.45</span>
-                        <a href="#" class="button travel__button"><i class='bx bxs-plane-alt'></i></a>
-                    </div>
-
-                    <div class="promo__data">
-                        <img src="{{ url('backend/img/travel.png') }}" alt="" class="promo__img">
-                        <h3 class="travel__title">Solo Travel</h3>
-                        <span class="travel__category">travel</span><br>
-                        <span class="travel__preci">$9.45</span>
-                        <a href="#" class="button travel__button"><i class='bx bxs-plane-alt'></i></a>
-                    </div>
-                     <div class="promo__data">
-                        <img src="{{ url('backend/img/travel.png') }}" alt="" class="promo__img">
-                        <h3 class="travel__title">Solo Travel</h3>
-                        <span class="travel__category">travel</span><br>
-                        <span class="travel__preci">$9.45</span>
-                        <a href="#" class="button travel__button"><i class='bx bxs-plane-alt'></i></a>
-                    </div>
-                    <div class="promo__data">
-                        <img src="{{ url('backend/img/travel.png') }}" alt="" class="promo__img">
-                        <h3 class="travel__title">Solo Travel</h3>
-                        <span class="travel__category">travel</span><br>
-                        <span class="travel__preci">$9.45</span>
-                        <a href="#" class="button travel__button"><i class='bx bxs-plane-alt'></i></a>
-                    </div>
+                    @endforeach
                 </div>
             </section>
 

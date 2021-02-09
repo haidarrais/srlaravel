@@ -25,7 +25,7 @@
         </li>
 
         <li class="nav-item active">
-            <a class="nav-link" href="/admin/tour-travel">
+            <a class="nav-link" href="/admin/travel">
                 <i class="fas fa-fw fa-images"></i>
                 <span>Tour Travel</span></a>
         </li>
@@ -48,5 +48,47 @@
     <!-- End of Sidebar -->
 @endsection
 @section('content')
-
+<div class="container">
+<h1>Contents Manager (Travel)</h1>
+    <a href="{{ route('travel.create') }}" class="btn btn-success mb-2">Add</a>
+    <br>
+    <div class="row">
+        <div class="col-12">
+            <table class="table table-bordered" id="laravel_crud">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Title</th>
+                        <th>Travel Code</th>
+                        <th>Description</th>
+                        <th>Gambar</th>
+                        <th>Created at</th>
+                        <th colspan="2">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach($travels as $travel)
+                    <tr>
+                        <td>{{ $travel->id }}</td>
+                        <td>{{ $travel->title }}</td>
+                        <td>{{ $travel->travel_code }}</td>
+                        <td>{{ $travel->description }}</td>
+                        <td><img src="{{ url('asset/img/', $travel->image) }}" alt="" width="200rem"></td>
+                        <td>{{ date('Y-m-d', strtotime($travel->created_at)) }}</td>
+                        <td><a href="{{ route('travel.edit',$travel->id)}}" class="btn btn-primary">Edit</a></td>
+                        <td>
+                        <form action="{{ route('travel.destroy', $travel->id)}}" method="post">
+                        {{ csrf_field() }}
+                        @method('DELETE')
+                        <button class="btn btn-danger" type="submit">Delete</button>
+                        </form>
+                        </td>
+                    </tr>
+                @endforeach
+                </tbody>
+            </table>
+        {!! $travels->links() !!}
+        </div>
+    </div>
+</div>
 @endsection
