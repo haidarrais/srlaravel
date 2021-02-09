@@ -104,24 +104,44 @@
 
 
             <!--========== INVESTMENT ==========-->
-            <section class="invest section" id="investment">
-                <div class="invest__container bd-container bd-grid">
-                    <div class="invest__content">
-                        <h2 class="section-title-center invest__title">Investment</h2>
-                        <p class="invest__description">Drop your email and get the best investment information</p>
-                        <form action="">
-                            <div class="invest__direction">
-                                <input type="text" placeholder="Email address" class="invest__input">
-                                <a href="#" class="button">Gas</a>
-                            </div>
-                        </form>
-                    </div>
+            <section class="invest section bd-container" id="invest">
+                <h2 class="section-title">Investment Info</h2>
+                    <div class="slideshow-container promo__container">
 
-                    <div class="invest__img">
-                        <img src="{{ url('backend/img/investment.png') }}" alt="">
-                    </div>
-                </div>
-            </section>
+                        <!-- Full-width images with number and caption text -->
+                        <div class="mySlides fade">
+                          <div class="numbertext">1 / 2</div>
+                          <div class="slide-control">
+                            <img 
+                            src="{{url('backend/img/slide/slide-1.jpg')}}"    
+                            style="width:100%">
+                            <div class="image-darken"></div>   
+                            <div id="text">
+                              <h2 class="invest__title">Title</h2>
+                              <p class="invest_description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam, dolores.</p>
+                            </div>
+                          </div>                          
+                        </div>
+                      
+                        <div class="mySlides fade">
+                          <div class="numbertext">2 / 2</div>
+                          <div class="slide-control">
+                              <img 
+                              src="{{url('backend/img/slide/slide-2.jpg')}}" 
+                              style="width:100%">
+                              <div class="image-darken"></div>
+                              <div id="text">
+                                <h2 class="invest__title">Title</h2>
+                                <p class="invest_description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam, dolores.</p>
+                              </div>
+                          </div>
+                        </div>
+                        
+                        <!-- Next and previous buttons -->
+                        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                      </div>
+            </section>           
         </main>
 
         <!--========== FOOTER ==========-->
