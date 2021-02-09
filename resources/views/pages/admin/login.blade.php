@@ -46,7 +46,7 @@
                   placeholder="Password" 
                   name="password"
                   >
-                  <div class=" alert-danger  text-center rounded-bottom">@error('password')
+                  <div class=" alert-danger small text-center rounded-bottom">@error('password')
                     {{$message}}
                     @enderror
                   </div>
