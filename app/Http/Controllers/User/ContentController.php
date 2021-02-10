@@ -5,6 +5,7 @@ namespace App\Http\Controllers\User;
 use App\Models\Promo;
 use App\Models\Travel;
 use App\Http\Controllers\Controller;
+use App\Models\Investment;
 use Illuminate\Http\Request;
 
 class ContentController extends Controller
@@ -13,6 +14,7 @@ class ContentController extends Controller
     {
         $travel = Travel::all();
         $promo = Promo::all();
-        return view('pages.user.dashboard', compact('promo', 'travel'));
+        $investment = Investment::all();
+        return view('pages.user.dashboard', compact('promo', 'travel', 'investment'));
     }
 }

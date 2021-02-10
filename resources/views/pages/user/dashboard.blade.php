@@ -73,7 +73,7 @@
                     ?>
                     <div class="promo__data">
                         <img src="{{ url('/asset/img') . '/' . $promo->image }}" alt="" class="promo__img">
-                        <h3 class="promo__title">{{$promo->title}}</h3>
+                        <h3 class="promo__title" style="margin-bottom: 40px">{{$promo->title}}</h3>
                         <div href="#" class="button promo__deadline">{{ $days . 'hari ' . $hours. 'jam' }}</i></div>
                         <a href="#" class="button promo__button"><i class='bx bxs-cart'></i></a>
                     </div>
@@ -109,39 +109,27 @@
                     <div class="slideshow-container promo__container">
 
                         <!-- Full-width images with number and caption text -->
+                        @foreach ($investment as $invest)
+
+                        @endforeach
                         <div class="mySlides fade">
-                          <div class="numbertext">1 / 2</div>
                           <div class="slide-control">
-                            <img 
-                            src="{{url('backend/img/slide/slide-1.jpg')}}"    
+                            <img
+                            src="{{ url('/asset/img') . '/' . $invest->image }}"
                             style="width:100%">
-                            <div class="image-darken"></div>   
+                            <div class="image-darken"></div>
                             <div id="text">
-                              <h2 class="invest__title">Title</h2>
-                              <p class="invest_description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam, dolores.</p>
+                              <h2 class="invest__title">{{$invest->title}}</h2>
+                              <p class="invest_description">{{$invest->description}}</p>
                             </div>
-                          </div>                          
-                        </div>
-                      
-                        <div class="mySlides fade">
-                          <div class="numbertext">2 / 2</div>
-                          <div class="slide-control">
-                              <img 
-                              src="{{url('backend/img/slide/slide-2.jpg')}}" 
-                              style="width:100%">
-                              <div class="image-darken"></div>
-                              <div id="text">
-                                <h2 class="invest__title">Title</h2>
-                                <p class="invest_description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam, dolores.</p>
-                              </div>
                           </div>
                         </div>
-                        
+
                         <!-- Next and previous buttons -->
                         <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
                         <a class="next" onclick="plusSlides(1)">&#10095;</a>
                       </div>
-            </section>           
+            </section>
         </main>
 
         <!--========== FOOTER ==========-->

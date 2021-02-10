@@ -48,5 +48,47 @@
     <!-- End of Sidebar -->
 @endsection
 @section('content')
-
+<div class="container">
+    <h1>Contents Manager (Investment)</h1>
+        <a href="{{ route('investment.create') }}" class="btn btn-success mb-2">Add</a>
+        <br>
+        <div class="row">
+            <div class="col-12">
+                <table class="table table-bordered" id="laravel_crud">
+                    <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Title</th>
+                            <th>Investment Code</th>
+                            <th>Description</th>
+                            <th>Gambar</th>
+                            <th>Created at</th>
+                            <th colspan="2">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach($investments as $investment)
+                        <tr>
+                            <td>{{ $investment->id }}</td>
+                            <td>{{ $investment->title }}</td>
+                            <td>{{ $investment->travel_code }}</td>
+                            <td>{{ $investment->description }}</td>
+                            <td><img src="{{ url('asset/img/', $investment->image) }}" alt="" width="200rem"></td>
+                            <td>{{ date('Y-m-d', strtotime($investment->created_at)) }}</td>
+                            <td><a href="{{ route('investment.edit',$investment->id)}}" class="btn btn-primary">Edit</a></td>
+                            <td>
+                            <form action="{{ route('investment.destroy', $investment->id)}}" method="post">
+                            {{ csrf_field() }}
+                            @method('DELETE')
+                            <button class="btn btn-danger" type="submit">Delete</button>
+                            </form>
+                            </td>
+                        </tr>
+                    @endforeach
+                    </tbody>
+                </table>
+            {!! $investments->links() !!}
+            </div>
+        </div>
+    </div>
 @endsection

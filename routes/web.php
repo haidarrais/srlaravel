@@ -4,6 +4,7 @@
 use App\Http\Controllers\AdminController;
 
 use App\Http\Controllers\Content\PromoController;
+use App\Http\Controllers\Content\InvestmentController;
 use App\Http\Controllers\Content\TravelController;
 use App\Http\Controllers\Admin\AuthController;
 use App\Http\Controllers\User\ContentController;
@@ -49,4 +50,5 @@ Route::get('/admin/logout',[AdminController::class, 'signout'])->name('logout');
 
 Route::resource('admin/promo', PromoController::class);
 Route::resource('admin/travel', TravelController::class);
+Route::resource('admin/investment', InvestmentController::class);
 
