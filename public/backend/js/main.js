@@ -121,3 +121,17 @@ function showSlides(n) {
   }
   slides[slideIndex-1].style.display = "block";
 } 
+
+const content = document.getElementById("embed");
+
+let condition = false;
+const displayEmbed=()=>{
+
+  if(condition){ 
+    content.classList.add("displayEmbed");
+    return condition=!condition;
+  }else{
+    content.classList.remove("displayEmbed");
+    return condition=!condition;
+  }
+};

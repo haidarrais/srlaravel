@@ -31,7 +31,9 @@
                         <li class="nav__item"><a href="#promo" class="nav__link">PROGRAM AND PROMO</a></li>
                         <li class="nav__item"><a href="#travel" class="nav__link">TOUR AND TRAVEL</a></li>
                         <li class="nav__item"><a href="#investment" class="nav__link">PROPERTY INVESMENT INFO</a></li>
-                        <li class="nav__item"><a href="#travel" class="nav__link">PRODUCT</a></li>
+                        <li class="nav__item" onclick="displayEmbed()"><a href="#" class="nav__link">TESTIMONIAL</a>
+                            <iframe id="embed" type="text/html" src="https://comments.app/view/oBzjoYNF" width="400" height="500"><i class='bx bx-x'></i></iframe>
+                        </li>
                     </ul>
                 </div>
 

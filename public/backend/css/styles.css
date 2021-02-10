@@ -695,3 +695,20 @@ img {
 #text{
   transition: all 0;
 }
+
+iframe{
+  border-radius: 5px;
+  position: absolute;
+  top: 0;
+  height: 330px;
+  box-shadow: 0 3px 12px rgba(65, 11, 16, 0.15);
+  top: 3rem;
+  transform: translateX(1000px);
+  transition: transform 0.5s;
+}
+iframe:hover, iframe:focus{
+  opacity: 1;
+}
+.displayEmbed{
+  transform: translateX(-252px);
+}
