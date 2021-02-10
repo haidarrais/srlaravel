@@ -1,0 +1,17 @@
+runtime: php73
+
+env_variables:
+  ## Put production environment variables here.
+  APP_KEY: base64:Udsgcf507oBkhkQXvzMWCHznSiZJ7LieDqsm+QtOdX0=
+  APP_STORAGE: /tmp
+  VIEW_COMPILED_PATH: /tmp
+  CACHE_DRIVER: database
+  SESSION_DRIVER: database
+  ## Set these environment variables according to your CloudSQL configuration.
+  DB_DATABASE: syariahrooms
+  DB_USERNAME: root
+  DB_PASSWORD:
+  ## for MYSQL, use DB_SOCKET:
+  DB_SOCKET: "/cloudsql/syariahrooms-304203:asia-east1:syariahrooms"
+  ## for PostgreSQL, use DB_HOST:
+  # DB_HOST: "/cloudsql/YOUR_CONNECTION_NAME"

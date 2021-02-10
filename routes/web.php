@@ -33,15 +33,9 @@ Route::prefix(('user'))
 });
 //cegah halaman admin diakses sebelum login
 Route::group(['middleware'=>['AuthCheck']], function(){
-    Route::get('/admin', [AuthController::class, 'index'])->name('dashboard');
+    Route::get('/admin', [AuthController::class, 'index'])->name('admindashboard');
 });
-// Route::prefix('admin')
-//     ->namespace('Admin')
-//     ->group(['middleware'=>['AuthCheck']],function(){
-//
-// });
 
-//cegah admin yang sudah login mengakses halaman login
 Route::group(['middleware'=>['DoubleLogin']], function(){
     Route::get('/admin/login',[AdminController::class, 'index'])->name("login");
 });
