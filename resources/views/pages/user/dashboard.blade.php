@@ -110,20 +110,19 @@
 
                         <!-- Full-width images with number and caption text -->
                         @foreach ($investment as $invest)
-
-                        @endforeach
                         <div class="mySlides fade">
-                          <div class="slide-control">
-                            <img
-                            src="{{ url('/asset/img') . '/' . $invest->image }}"
-                            style="width:100%">
-                            <div class="image-darken"></div>
-                            <div id="text">
-                              <h2 class="invest__title">{{$invest->title}}</h2>
-                              <p class="invest_description">{{$invest->description}}</p>
+                            <div class="slide-control">
+                              <img
+                              src="{{ url('/asset/img') . '/' . $invest->image }}"
+                              style="width:100%">
+                              <div class="image-darken"></div>
+                              <div id="text">
+                                <h2 class="invest__title">{{$invest->title}}</h2>
+                                <p class="invest_description">{{$invest->description}}</p>
+                              </div>
                             </div>
-                          </div>
                         </div>
+                        @endforeach
 
                         <!-- Next and previous buttons -->
                         <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
