@@ -122,16 +122,23 @@ function showSlides(n) {
   slides[slideIndex-1].style.display = "block";
 } 
 
-const content = document.getElementById("embed");
+const content = document.getElementById("screen");
 
 let condition = false;
 const displayEmbed=()=>{
 
   if(condition){ 
-    content.classList.add("displayEmbed");
+    content.classList.add("hide");
     return condition=!condition;
   }else{
-    content.classList.remove("displayEmbed");
+    content.classList.remove("hide");
     return condition=!condition;
   }
 };
+
+
+const botForm = document.getElementById("sendMessage");
+botForm.addEventListener('onsubmit', function(){
+    e.preventDefault();
+    alert("sumbitted!");
+})

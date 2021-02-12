@@ -7,6 +7,7 @@ use App\Http\Controllers\Content\PromoController;
 use App\Http\Controllers\Content\InvestmentController;
 use App\Http\Controllers\Content\TravelController;
 use App\Http\Controllers\Admin\AuthController;
+use App\Http\Controllers\BotTelegramController;
 use App\Http\Controllers\User\ContentController;
 use Illuminate\Support\Facades\Route;
 
@@ -46,3 +47,4 @@ Route::resource('admin/promo', PromoController::class);
 Route::resource('admin/travel', TravelController::class);
 Route::resource('admin/investment', InvestmentController::class);
 
+Route::post('/kirim', [BotTelegramController::class, 'kirimPesan'])->name('kirim');
