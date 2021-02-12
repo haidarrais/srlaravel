@@ -6,7 +6,6 @@
 
         <!--========== BOX ICONS ==========-->
         <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
-
         <!--========== CSS ==========-->
         <link rel="stylesheet" href="{{ url('backend/css/styles.css') }}">
 
@@ -31,8 +30,7 @@
                         <li class="nav__item"><a href="#promo" class="nav__link">PROGRAM AND PROMO</a></li>
                         <li class="nav__item"><a href="#travel" class="nav__link">TOUR AND TRAVEL</a></li>
                         <li class="nav__item"><a href="#investment" class="nav__link">PROPERTY INVESMENT INFO</a></li>
-                        <li class="nav__item" onclick="displayEmbed()"><a href="#" class="nav__link">TESTIMONIAL</a>
-                            <iframe id="embed" type="text/html" src="https://comments.app/view/oBzjoYNF" width="400" height="500"></iframe>
+                        <li class="nav__item"><a href="#reach" class="nav__link">TELL US</a>
                         </li>
                     </ul>
                 </div>
@@ -58,7 +56,7 @@
                     </div>
                 </div>
             </section>
-
+            
             <!--========== PROMO ==========-->
             <section class="promo section bd-container" id="promo">
                 <h2 class="section-title">Program & Promo</h2>
@@ -131,6 +129,75 @@
                         <a class="next" onclick="plusSlides(1)">&#10095;</a>
                       </div>
             </section>
+
+            <!--========== INVESTMENT ==========-->
+            <section class="promo section bd-container" id="reach">
+                <h1 class="section-title">Reach Us</h1>
+                <div class="screen">
+                    <div class="screen-header">
+                      <div class="screen-header-left">
+                        <div class="screen-header-button close"></div>
+                        <div class="screen-header-button maximize"></div>
+                        <div class="screen-header-button minimize"></div>
+                      </div>
+                      <div class="screen-header-right">
+                        <div class="screen-header-ellipsis"></div>
+                        <div class="screen-header-ellipsis"></div>
+                        <div class="screen-header-ellipsis"></div>
+                      </div>
+                    </div>
+                    <div class="screen-body">
+                      <div class="screen-body-item left">
+                        <div class="app-title">
+                          <span>Tell Us</span>
+                          <span>Your Thought</span>
+                        </div>
+                        <div class="app-contact">CONTACT INFO : +62 81 314 928 595</div>
+                      </div>
+                      <div class="screen-body-item">
+                        <form  id="sendMessage" class="app-form" action="{{route('kirim')}}" method="POST">
+                            @csrf
+                          <div class="app-form-group">
+                            <input 
+                            type="text" 
+                            class="app-form-control" 
+                            name="name"
+                            value="{{ old('name') }}" 
+                            placeholder="NAME">
+                          </div>
+                          <div class="app-form-group">
+                            <div class="disabled">+62</div>
+                            <input 
+                            type="tel" 
+                            class="app-form-control disabled-place"
+                            name="phoneNumber" 
+                            value='{{old('phoneNumber')}}'
+                            placeholder="PHONE NUMBER" >
+                          </div>
+                          <div class="app-form-group message">
+                            <input 
+                            type="text"
+                            class="app-form-control"
+                            name="message" 
+                            value="{{ old('message') }}" 
+                            placeholder="message"
+                            style="text-transform: unset"
+                            >
+                          </div>
+                          <div>@error('message')
+                              {{$message}}
+                          @enderror</div>
+                          <div class="app-form-group buttons">
+                            <button class="app-form-button" 
+                            type="submit" 
+                            >SEND</button>
+                          </div>
+                        </form>
+                    </div>
+                    </div>
+                  </div>
+            </section>
+        </main>
         </main>
 
         <!--========== FOOTER ==========-->
@@ -140,7 +207,7 @@
                     <h3 class="footer__title">
                         <a href="#" class="footer__logo">Syariahrooms</a>
                     </h3>
-                    <p class="footer__description">Temukan kenyamanan menginap seperti rumah sendiri dengan #staywithsyariah </p>
+                    <p class="footer__description">Find the convenience as your sweet home has with #staysyariah</p>
                 </div>
 
                 <div class="footer__content">
@@ -175,8 +242,25 @@
 
         <!--========== SCROLL REVEAL ==========-->
         <script src="https://unpkg.com/scrollreveal"></script>
+        <script>
 
+        </script>
         <!--========== MAIN JS ==========-->
         <script src="{{ url('backend/js/main.js') }}"></script>
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+        @if(session()->has('user'))
+            <div class="alert alert-success">
+                <script>
+                    swal(`Thankyou {{ session()->get('user') }}!`,"Your message is sent to us","success");
+                </script>   
+            </div>
+       @endif
+       @if(session()->has('errorMessage'))
+           <div class="alert alert-fail">
+               <script>
+                   swal(`{{ session()->get('errorMessage') }}!`,"","error");
+               </script>   
+           </div>         
+       @endif
     </body>
 </html>
