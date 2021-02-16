@@ -790,6 +790,9 @@ img {
 .screen-body {
   display: flex;
   flex-direction: column;
+  background-color: var(--first-color);
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
 }
 
 .screen-body-item {
@@ -840,6 +843,7 @@ padding: 11px;
   text-align: right;
   padding-right: 2rem;
   padding-bottom: 1rem;
+  border-radius: 15px;
 }
 
 .app-form-control {
@@ -848,11 +852,12 @@ padding: 11px;
   background: none;
   border: none;
   border-bottom: 1px solid var(--body-color);
-  color: #ddd;
+  color: var(--container-color);
   font-size: 14px;
   text-transform: uppercase;
   outline: none;
   transition: border-color .2s;
+  font-weight: var(--font-bold);
 }
 
 .app-form-control::placeholder {
