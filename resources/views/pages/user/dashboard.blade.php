@@ -30,8 +30,6 @@
                         <li class="nav__item"><a href="#promo" class="nav__link">PROGRAM AND PROMO</a></li>
                         <li class="nav__item"><a href="#travel" class="nav__link">TOUR AND TRAVEL</a></li>
                         <li class="nav__item"><a href="#investment" class="nav__link">PROPERTY INVESMENT INFO</a></li>
-                        <li class="nav__item"><a href="#reach" class="nav__link">TELL US</a>
-                        </li>
                     </ul>
                 </div>
 
@@ -181,7 +179,46 @@
                             style="text-transform: unset"
                             >
                           </div>
-                          <div></div>
+                          <div class="app-form-group message">
+                            <label for="kebersihan" class="app-form-control">Kebersihan:</label>
+                                <select id="kebersihan" name="kebersihan">
+                                    <option value="1"><?= "⭐" ?></option>
+                                    <option value="2"><?= "⭐⭐" ?></option>
+                                    <option value="3"><?= "⭐⭐⭐" ?></option>
+                                    <option value="4"><?= "⭐⭐⭐⭐" ?></option>
+                                    <option value="4"><?= "⭐⭐⭐⭐⭐" ?></option>
+                                </select>
+                          </div>
+                          <div class="app-form-group message">
+                            <label for="pelayanan" class="app-form-control">Pelayanan:</label>
+                                <select id="pelayanan" name="pelayanan">
+                                    <option value="1"><?= "⭐" ?></option>
+                                    <option value="2"><?= "⭐⭐" ?></option>
+                                    <option value="3"><?= "⭐⭐⭐" ?></option>
+                                    <option value="4"><?= "⭐⭐⭐⭐" ?></option>
+                                    <option value="4"><?= "⭐⭐⭐⭐⭐" ?></option>
+                                </select>
+                          </div>
+                          <div class="app-form-group message">
+                            <label for="lokasi" class="app-form-control">Lokasi:</label>
+                                <select id="lokasi" name="lokasi">
+                                    <option value="1"><?= "⭐" ?></option>
+                                    <option value="2"><?= "⭐⭐" ?></option>
+                                    <option value="3"><?= "⭐⭐⭐" ?></option>
+                                    <option value="4"><?= "⭐⭐⭐⭐" ?></option>
+                                    <option value="4"><?= "⭐⭐⭐⭐⭐" ?></option>
+                                </select>
+                          </div>
+                          <div class="app-form-group message">
+                            <label for="fasilitas" class="app-form-control">Fasilitas:</label>
+                                <select id="fasilitas" name="fasilitas">
+                                    <option value="1"><?= "⭐" ?></option>
+                                    <option value="2"><?= "⭐⭐" ?></option>
+                                    <option value="3"><?= "⭐⭐⭐" ?></option>
+                                    <option value="4"><?= "⭐⭐⭐⭐" ?></option>
+                                    <option value="4"><?= "⭐⭐⭐⭐⭐" ?></option>
+                                </select>
+                          </div>
                           </div>
                           <div class="app-form-group buttons">
                             <button class="app-form-button" 
