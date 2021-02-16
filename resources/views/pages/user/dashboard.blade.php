@@ -30,8 +30,6 @@
                         <li class="nav__item"><a href="#promo" class="nav__link">PROGRAM AND PROMO</a></li>
                         <li class="nav__item"><a href="#travel" class="nav__link">TOUR AND TRAVEL</a></li>
                         <li class="nav__item"><a href="#investment" class="nav__link">PROPERTY INVESMENT INFO</a></li>
-                        <li class="nav__item"><a href="#reach" class="nav__link">TELL US</a>
-                        </li>
                     </ul>
                 </div>
 
@@ -131,19 +129,16 @@
             </section>
 
             <!--========== INVESTMENT ==========-->
-            <section class="promo section bd-container" id="reach">
-                <h1 class="section-title">Reach Us</h1>
-                <div class="screen">
+            <section class="promo section bd-container form-container hideForm" id="reach">
+                <div class="screen " id="screen">
                     <div class="screen-header">
                       <div class="screen-header-left">
                         <div class="screen-header-button close"></div>
                         <div class="screen-header-button maximize"></div>
                         <div class="screen-header-button minimize"></div>
                       </div>
-                      <div class="screen-header-right">
-                        <div class="screen-header-ellipsis"></div>
-                        <div class="screen-header-ellipsis"></div>
-                        <div class="screen-header-ellipsis"></div>
+                      <div class="screen-header-right" onclick="toogleClick()">
+                        <i class='bx bxs-chevron-down-square'></i>
                       </div>
                     </div>
                     <div class="screen-body">
@@ -152,26 +147,26 @@
                           <span>Tell Us</span>
                           <span>Your Thought</span>
                         </div>
-                        <div class="app-contact">CONTACT INFO : +62 81 314 928 595</div>
                       </div>
                       <div class="screen-body-item">
-                        <form  id="sendMessage" class="app-form" action="{{route('kirim')}}" method="POST">
-                            @csrf
+                        <form  id="sendMessage" class="app-form" action="{{route('kirim')}}" method="POST">         
+                            @csrf                  
                           <div class="app-form-group">
                             <input 
                             type="text" 
                             class="app-form-control" 
                             name="name"
-                            value="{{ old('name') }}" 
+                            value="{{ old('name') }}"
                             placeholder="NAME">
                           </div>
                           <div class="app-form-group">
                             <div class="disabled">+62</div>
                             <input 
                             type="tel" 
+                            pattern="{0-9}"
                             class="app-form-control disabled-place"
                             name="phoneNumber" 
-                            value='{{old('phoneNumber')}}'
+                            value="{{ old('phoneNumber') }}"
                             placeholder="PHONE NUMBER" >
                           </div>
                           <div class="app-form-group message">
@@ -184,9 +179,47 @@
                             style="text-transform: unset"
                             >
                           </div>
-                          <div>@error('message')
-                              {{$message}}
-                          @enderror</div>
+                          <div class="app-form-group message">
+                            <label for="kebersihan" class="app-form-control">Kebersihan:</label>
+                                <select id="kebersihan" name="kebersihan">
+                                    <option value="1"><?= "⭐" ?></option>
+                                    <option value="2"><?= "⭐⭐" ?></option>
+                                    <option value="3"><?= "⭐⭐⭐" ?></option>
+                                    <option value="4"><?= "⭐⭐⭐⭐" ?></option>
+                                    <option value="4"><?= "⭐⭐⭐⭐⭐" ?></option>
+                                </select>
+                          </div>
+                          <div class="app-form-group message">
+                            <label for="pelayanan" class="app-form-control">Pelayanan:</label>
+                                <select id="pelayanan" name="pelayanan">
+                                    <option value="1"><?= "⭐" ?></option>
+                                    <option value="2"><?= "⭐⭐" ?></option>
+                                    <option value="3"><?= "⭐⭐⭐" ?></option>
+                                    <option value="4"><?= "⭐⭐⭐⭐" ?></option>
+                                    <option value="4"><?= "⭐⭐⭐⭐⭐" ?></option>
+                                </select>
+                          </div>
+                          <div class="app-form-group message">
+                            <label for="lokasi" class="app-form-control">Lokasi:</label>
+                                <select id="lokasi" name="lokasi">
+                                    <option value="1"><?= "⭐" ?></option>
+                                    <option value="2"><?= "⭐⭐" ?></option>
+                                    <option value="3"><?= "⭐⭐⭐" ?></option>
+                                    <option value="4"><?= "⭐⭐⭐⭐" ?></option>
+                                    <option value="4"><?= "⭐⭐⭐⭐⭐" ?></option>
+                                </select>
+                          </div>
+                          <div class="app-form-group message">
+                            <label for="fasilitas" class="app-form-control">Fasilitas:</label>
+                                <select id="fasilitas" name="fasilitas">
+                                    <option value="1"><?= "⭐" ?></option>
+                                    <option value="2"><?= "⭐⭐" ?></option>
+                                    <option value="3"><?= "⭐⭐⭐" ?></option>
+                                    <option value="4"><?= "⭐⭐⭐⭐" ?></option>
+                                    <option value="4"><?= "⭐⭐⭐⭐⭐" ?></option>
+                                </select>
+                          </div>
+                          </div>
                           <div class="app-form-group buttons">
                             <button class="app-form-button" 
                             type="submit" 
@@ -194,12 +227,15 @@
                           </div>
                         </form>
                     </div>
-                    </div>
                   </div>
-            </section>
-        </main>
-        </main>
-
+                </section>
+                <div class="button toggle-button" id="toggle-button"onclick="toogleClick()">
+                    <div class="inside-fixed">
+                        <i class='bx bxs-like'></i>
+                        <span style="margin-left: .5rem;">Review Kami</span>
+                    </div>
+                </div>
+            </main>
         <!--========== FOOTER ==========-->
         <footer class="footer section">
             <div class="footer__container bd-container bd-grid">
