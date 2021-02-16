@@ -136,9 +136,20 @@ const displayEmbed=()=>{
   }
 };
 
+//display form
+const smallForm = document.getElementById("reach");
+const toogleForm = document.getElementById("toggle-button");
+
+let displayForm = false;
+const toogleClick=()=>{
+  smallForm.classList.toggle("showForm");
+  toogleForm.classList.toggle("removeToogel");
+}
+
 
 const botForm = document.getElementById("sendMessage");
 botForm.addEventListener('onsubmit', function(){
     e.preventDefault();
     alert("sumbitted!");
 })
+

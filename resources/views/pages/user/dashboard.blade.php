@@ -131,19 +131,16 @@
             </section>
 
             <!--========== INVESTMENT ==========-->
-            <section class="promo section bd-container" id="reach">
-                <h1 class="section-title">Reach Us</h1>
-                <div class="screen">
+            <section class="promo section bd-container form-container hideForm" id="reach">
+                <div class="screen " id="screen">
                     <div class="screen-header">
                       <div class="screen-header-left">
                         <div class="screen-header-button close"></div>
                         <div class="screen-header-button maximize"></div>
                         <div class="screen-header-button minimize"></div>
                       </div>
-                      <div class="screen-header-right">
-                        <div class="screen-header-ellipsis"></div>
-                        <div class="screen-header-ellipsis"></div>
-                        <div class="screen-header-ellipsis"></div>
+                      <div class="screen-header-right" onclick="toogleClick()">
+                        <i class='bx bxs-chevron-down-square'></i>
                       </div>
                     </div>
                     <div class="screen-body">
@@ -152,26 +149,26 @@
                           <span>Tell Us</span>
                           <span>Your Thought</span>
                         </div>
-                        <div class="app-contact">CONTACT INFO : +62 81 314 928 595</div>
                       </div>
                       <div class="screen-body-item">
-                        <form  id="sendMessage" class="app-form" action="{{route('kirim')}}" method="POST">
-                            @csrf
+                        <form  id="sendMessage" class="app-form" action="{{route('kirim')}}" method="POST">         
+                            @csrf                  
                           <div class="app-form-group">
                             <input 
                             type="text" 
                             class="app-form-control" 
                             name="name"
-                            value="{{ old('name') }}" 
+                            value="{{ old('name') }}"
                             placeholder="NAME">
                           </div>
                           <div class="app-form-group">
                             <div class="disabled">+62</div>
                             <input 
                             type="tel" 
+                            pattern="{0-9}"
                             class="app-form-control disabled-place"
                             name="phoneNumber" 
-                            value='{{old('phoneNumber')}}'
+                            value="{{ old('phoneNumber') }}"
                             placeholder="PHONE NUMBER" >
                           </div>
                           <div class="app-form-group message">
@@ -184,9 +181,8 @@
                             style="text-transform: unset"
                             >
                           </div>
-                          <div>@error('message')
-                              {{$message}}
-                          @enderror</div>
+                          <div></div>
+                          </div>
                           <div class="app-form-group buttons">
                             <button class="app-form-button" 
                             type="submit" 
@@ -194,12 +190,15 @@
                           </div>
                         </form>
                     </div>
-                    </div>
                   </div>
-            </section>
-        </main>
-        </main>
-
+                </section>
+                <div class="button toggle-button" id="toggle-button"onclick="toogleClick()">
+                    <div class="inside-fixed">
+                        <i class='bx bxs-like'></i>
+                        <span style="margin-left: .5rem;">Review Kami</span>
+                    </div>
+                </div>
+            </main>
         <!--========== FOOTER ==========-->
         <footer class="footer section">
             <div class="footer__container bd-container bd-grid">

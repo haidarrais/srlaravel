@@ -696,23 +696,48 @@ img {
   transition: all 0;
 }
 
+.form-container {
+  position: fixed;
+  margin: auto;
+  max-width: 352px;
+  top: 16%;
+  right: 2rem;
+  z-index: var(--z-fixed);
+  transition: all .5s;
+}
+@media screen and (min-width:767px){
+  .container{top: 9%;}
+}
+.bxs-chevron-down-square, .bxs-like{
+  color: white;
+  font-size: 25px;
+}
+.toggle-button{
+  background-color: #1dc8a0;
+  position: fixed;
+  right: 125px;
+  cursor: pointer;
+  top: 74%;
+  right: 2rem;
+  z-index: var(--z-fixed);
+  box-shadow: 1px 4px 9px rgba(0,0,0,.5);
+}
+.inside-fixed{
+  display: flex;
+}
+.removeToogel{
+  display: none;
+}
+.hideForm{
+  transform: translateX(1000px);
+}
+.showForm{
+  transform: translateX(0px);
+}
 .screen {
   position: relative;
-  background: var(--first-color);
+  background: #3e3e3e;
   border-radius: 15px;
-}
-
-.screen:after {
-  content: '';
-  display: block;
-  position: absolute;
-  top: 0;
-  left: 20px;
-  right: 20px;
-  bottom: 0;
-  border-radius: 15px;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, .4);
-  z-index: -1;
 }
 
 .screen-header {
@@ -751,6 +776,7 @@ img {
 
 .screen-header-right {
   display: flex;
+  cursor: pointer;
 }
 
 .screen-header-ellipsis {
@@ -763,11 +789,12 @@ img {
 
 .screen-body {
   display: flex;
+  flex-direction: column;
 }
 
 .screen-body-item {
   flex: 1;
-  padding: 50px;
+padding: 11px;
 }
 
 .screen-body-item.left {
@@ -811,6 +838,8 @@ img {
 .app-form-group.buttons {
   margin-bottom: 0;
   text-align: right;
+  padding-right: 2rem;
+  padding-bottom: 1rem;
 }
 
 .app-form-control {
@@ -843,7 +872,7 @@ img {
 .disabled{
   position: absolute;
   color: white;
-  top: 43.8%;
+  top: 55.5%;
 }
 .disabled-place{
   padding-left: 2rem;
