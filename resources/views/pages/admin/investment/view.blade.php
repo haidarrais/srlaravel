@@ -25,7 +25,7 @@
         </li>
 
         <li class="nav-item">
-            <a class="nav-link" href="/admin/tour-travel">
+            <a class="nav-link" href="/admin/travel">
                 <i class="fas fa-fw fa-images"></i>
                 <span>Tour Travel</span></a>
         </li>

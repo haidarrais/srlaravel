@@ -54,7 +54,7 @@
                     </div>
                 </div>
             </section>
-            
+
             <!--========== PROMO ==========-->
             <section class="promo section bd-container" id="promo">
                 <h2 class="section-title">Program & Promo</h2>
@@ -149,32 +149,32 @@
                         </div>
                       </div>
                       <div class="screen-body-item">
-                        <form  id="sendMessage" class="app-form" action="{{route('kirim')}}" method="POST">         
-                            @csrf                  
+                        <form  id="sendMessage" class="app-form" action="{{route('kirim')}}" method="POST">
+                            @csrf
                           <div class="app-form-group">
-                            <input 
-                            type="text" 
-                            class="app-form-control" 
+                            <input
+                            type="text"
+                            class="app-form-control"
                             name="name"
                             value="{{ old('name') }}"
                             placeholder="NAME">
                           </div>
                           <div class="app-form-group">
                             <div class="disabled">+62</div>
-                            <input 
-                            type="tel" 
+                            <input
+                            type="tel"
                             pattern="{0-9}"
                             class="app-form-control disabled-place"
-                            name="phoneNumber" 
+                            name="phoneNumber"
                             value="{{ old('phoneNumber') }}"
                             placeholder="PHONE NUMBER" >
                           </div>
                           <div class="app-form-group message">
-                            <input 
+                            <input
                             type="text"
                             class="app-form-control"
-                            name="message" 
-                            value="{{ old('message') }}" 
+                            name="message"
+                            value="{{ old('message') }}"
                             placeholder="message"
                             style="text-transform: unset"
                             >
@@ -221,15 +221,15 @@
                           </div>
                           </div>
                           <div class="app-form-group buttons">
-                            <button class="app-form-button" 
-                            type="submit" 
+                            <button class="app-form-button"
+                            type="submit"
                             >SEND</button>
                           </div>
                         </form>
                     </div>
                   </div>
                 </section>
-                <div class="button toggle-button" id="toggle-button"onclick="toogleClick()">
+                <div class="button toggle-button" id="toggle-button" onclick="toogleClick()">
                     <div class="inside-fixed">
                         <i class='bx bxs-like'></i>
                         <span style="margin-left: .5rem;">Review Kami</span>
@@ -288,15 +288,15 @@
             <div class="alert alert-success">
                 <script>
                     swal(`Thankyou {{ session()->get('user') }}!`,"Your message is sent to us","success");
-                </script>   
+                </script>
             </div>
        @endif
        @if(session()->has('errorMessage'))
            <div class="alert alert-fail">
                <script>
                    swal(`{{ session()->get('errorMessage') }}!`,"","error");
-               </script>   
-           </div>         
+               </script>
+           </div>
        @endif
     </body>
 </html>
