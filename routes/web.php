@@ -27,12 +27,7 @@ Route::get('/', [ApiController::class, 'fetchAPI']);
 //     return view('welcome');
 // });
 
-Route::prefix(('user'))
-    ->namespace('User')
-    ->group(function(){
-        Route::get('/', [ContentController::class, 'index'])
-            ->name('dashboard');
-});
+Route::get('/', [ContentController::class, 'index'])->name('dashboard');
 //cegah halaman admin diakses sebelum login
 Route::group(['middleware'=>['AuthCheck']], function(){
     Route::get('/admin', [AuthController::class, 'index'])->name('admindashboard');

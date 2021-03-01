@@ -2,7 +2,7 @@
 const showMenu = (toggleId, navId) =>{
     const toggle = document.getElementById(toggleId),
     nav = document.getElementById(navId)
-    
+
     // Validate that variables exist
     if(toggle && nav){
         toggle.addEventListener('click', ()=>{
@@ -43,7 +43,7 @@ function scrollActive(){
 }
 window.addEventListener('scroll', scrollActive)
 
-/*==================== CHANGE BACKGROUND HEADER ====================*/ 
+/*==================== CHANGE BACKGROUND HEADER ====================*/
 function scrollHeader(){
     const nav = document.getElementById('header')
     // When the scroll is greater than 200 viewport height, add the scroll-header class to the header tag
@@ -51,7 +51,7 @@ function scrollHeader(){
 }
 window.addEventListener('scroll', scrollHeader)
 
-/*==================== SHOW SCROLL TOP ====================*/ 
+/*==================== SHOW SCROLL TOP ====================*/
 function scrollTop(){
     const scrollTop = document.getElementById('scroll-top');
     // When the scroll is higher than 560 viewport height, add the show-scroll class to the a tag with the scroll-top class
@@ -66,7 +66,7 @@ function yearsUpdate() {
     var n = d.getFullYear();
     document.getElementById("years").innerHTML = n;
   }
-  
+
 yearsUpdate();
 
 
@@ -77,7 +77,7 @@ const sr = ScrollReveal({
     reset: true,
 });
 
-sr.reveal(`.home__data, .home__img, 
+sr.reveal(`.home__data, .home__img,
            .promo__data,
            .travel__content,
            .slideshow-container,
@@ -120,14 +120,14 @@ function showSlides(n) {
       slides[i].style.display = "none";
   }
   slides[slideIndex-1].style.display = "block";
-} 
+}
 
 const content = document.getElementById("screen");
 
 let condition = false;
 const displayEmbed=()=>{
 
-  if(condition){ 
+  if(condition){
     content.classList.add("hide");
     return condition=!condition;
   }else{
@@ -145,11 +145,4 @@ const toogleClick=()=>{
   smallForm.classList.toggle("showForm");
   toogleForm.classList.toggle("removeToogel");
 }
-
-
-const botForm = document.getElementById("sendMessage");
-botForm.addEventListener('onsubmit', function(){
-    e.preventDefault();
-    alert("sumbitted!");
-})
 
