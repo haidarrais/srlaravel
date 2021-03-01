@@ -28,7 +28,7 @@ class AdminController extends Controller
                 $request->session()->put('LoggedAdmin', $adminInfo->username);
                 return redirect('admin');
             }else {
-                return back()->with('fail', 'Password salah');
+                return back()->with('fail', 'username or password is wrong');
             }
         }
     }

@@ -18,7 +18,7 @@ class AuthCheck
     public function handle(Request $request, Closure $next)
     {
         if(!session()->has('LoggedAdmin') && ($request->path())!='login'){
-            return redirect('admin/login')->with('fail', 'Login dulu lur ' . Emoji::thinkingFace());
+            return redirect('/admin/login')->with('fail', 'Login dulu lur ' . Emoji::thinkingFace());
         }
         return $next($request);
     }

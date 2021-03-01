@@ -2,12 +2,12 @@
 
 
 use App\Http\Controllers\AdminController;
-
 use App\Http\Controllers\Content\PromoController;
 use App\Http\Controllers\Content\InvestmentController;
 use App\Http\Controllers\Content\TravelController;
 use App\Http\Controllers\Admin\AuthController;
 use App\Http\Controllers\BotTelegramController;
+use App\Http\Controllers\Data\ApiController;
 use App\Http\Controllers\User\ContentController;
 use Illuminate\Support\Facades\Route;
 
@@ -21,10 +21,11 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/', [ApiController::class, 'fetchAPI']);
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
 Route::prefix(('user'))
     ->namespace('User')
