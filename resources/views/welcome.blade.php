@@ -64,12 +64,8 @@
         0%{
         opacity: 0;
         }
-
         }
-
-
         .main{
-
         min-height: 600px;
         margin: 0px auto;
         width: auto;
@@ -78,13 +74,11 @@
         align-items: center;
         justify-content: center;
         }
-
         .path {
         stroke-dasharray: 300;
         stroke-dashoffset: 300;
         animation: dash 4s alternate infinite;
         }
-
         @keyframes dash{
         0%, 30%{
         fill: 4B4B62;
@@ -93,6 +87,7 @@
         80%,100%{
         fill: transparent;
         stroke-dashoffset: -200;
+        }
         }
     </style>
 </head>
