@@ -14,7 +14,7 @@ class ApiController extends Controller
         if ($request->has("params")) {
             $key = $request->query("params");
         }else {
-            dd('put parameter');
+            return view('welcome');
         }
         date_default_timezone_set('Asia/Jakarta');
         $response = Http::get('https://backoffice.syariahrooms.com/api/ct_prop', [

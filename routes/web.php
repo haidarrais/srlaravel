@@ -23,11 +23,7 @@ use Illuminate\Support\Facades\Route;
 */
 Route::get('/', [ApiController::class, 'fetchAPI']);
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
-
-Route::get('/', [ContentController::class, 'index'])->name('dashboard');
+Route::get('/user', [ContentController::class, 'index'])->name('dashboard');
 //cegah halaman admin diakses sebelum login
 Route::group(['middleware'=>['AuthCheck']], function(){
     Route::get('/admin', [AuthController::class, 'index'])->name('admindashboard');
