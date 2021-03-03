@@ -13,6 +13,7 @@ return [
     |
     */
 
+    
     'name' => env('APP_NAME', 'Laravel'),
 
     /*
@@ -135,7 +136,6 @@ return [
     */
 
     'providers' => [
-
         /*
          * Laravel Framework Service Providers...
          */
