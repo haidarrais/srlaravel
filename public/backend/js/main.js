@@ -1,3 +1,26 @@
+
+let condition = false;
+const displayEmbed=()=>{
+
+  if(condition){
+    content.classList.add("hide");
+    return condition=!condition;
+  }else{
+    content.classList.remove("hide");
+    return condition=!condition;
+  }
+};
+
+//display form
+const smallForm = document.getElementById("reach");
+const toogleForm = document.getElementById("toggle-button");
+
+let displayForm = false;
+const toogleClick=()=>{
+  smallForm.classList.toggle("showForm");
+  toogleForm.classList.toggle("removeToogel");
+}
+
 /*==================== SHOW MENU ====================*/
 const showMenu = (toggleId, navId) =>{
     const toggle = document.getElementById(toggleId),
@@ -123,26 +146,3 @@ function showSlides(n) {
 }
 
 const content = document.getElementById("screen");
-
-let condition = false;
-const displayEmbed=()=>{
-
-  if(condition){
-    content.classList.add("hide");
-    return condition=!condition;
-  }else{
-    content.classList.remove("hide");
-    return condition=!condition;
-  }
-};
-
-//display form
-const smallForm = document.getElementById("reach");
-const toogleForm = document.getElementById("toggle-button");
-
-let displayForm = false;
-const toogleClick=()=>{
-  smallForm.classList.toggle("showForm");
-  toogleForm.classList.toggle("removeToogel");
-}
-

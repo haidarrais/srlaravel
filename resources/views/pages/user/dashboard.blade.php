@@ -10,7 +10,7 @@
     <!--========== CSS ==========-->
     <link rel="stylesheet" href="{{ url('backend/css/styles.css') }}">
 
-    <title>Syariahrooms Hospotality</title>
+    <title>Syariahrooms Hospitality</title>
 </head>
 
 <body>
@@ -24,7 +24,7 @@
         <nav class="nav bd-container">
             <div class="nav__brand">
                 <img src="{{ url('backend/img/logo.png') }}" alt="" class="logo-img">
-                <a href="#" class="nav__logo">Syariahrooms <br> Hospotality</a>
+                <a href="#" class="nav__logo">Syariahrooms <br> Hospitality</a>
             </div>
             <div class="nav__menu" id="nav-menu">
                 <ul class="nav__list">
@@ -49,7 +49,7 @@
                     <img src="{{ url('backend/img/home.png') }}" alt="">
                 </div>
                 <div class="home__data">
-                    <h1 class="home__title">Welcom to {{Session::get('homeStayName')}}</h1>
+                    <h1 class="home__title">Welcome to {{Session::get('homeStayName')}}</h1>
                     <p class="home__description">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aut, doloribus!</p>
                     <a href="#" class="button ">Get Started</a>
                 </div>
@@ -128,7 +128,7 @@
         </section>
 
         <!--========== INVESTMENT ==========-->
-        <section class="promo section bd-container form-container hideForm" id="reach">
+        <div class="promo bd-container form-container hideForm" id="reach">
             <div class="screen " id="screen">
                 <div class="screen-header">
                     <div class="screen-header-left">
@@ -225,7 +225,7 @@
                     </form>
                 </div>
             </div>
-        </section>
+        </div>
         <div class="button toggle-button" id="toggle-button" onclick="toogleClick()">
             <div class="inside-fixed">
                 <i class='bx bxs-like'></i>
@@ -248,7 +248,7 @@
                 <ul>
                     <li><a href="#" class="footer__link">Pricing </a></li>
                     <li><a href="#" class="footer__link">Discounts</a></li>
-                    <li><a href="#" class="footer__link">Hospotality</a></li>
+                    <li><a href="#" class="footer__link">Hospitality</a></li>
                 </ul>
             </div>
 
