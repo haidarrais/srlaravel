@@ -7,6 +7,7 @@ use App\Models\Travel;
 use App\Http\Controllers\Controller;
 use App\Models\Investment;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Cookie;
 
 class ContentController extends Controller
 {
@@ -15,6 +16,7 @@ class ContentController extends Controller
         $travel = Travel::all();
         $promo = Promo::all();
         $investment = Investment::all();
-        return view('pages.user.dashboard', compact('promo', 'travel', 'investment'));
+        $homestayName = Cookie::get('homestayName');
+        return view('pages.user.dashboard', compact('promo', 'travel', 'investment', 'homestayName'));
     }
 }

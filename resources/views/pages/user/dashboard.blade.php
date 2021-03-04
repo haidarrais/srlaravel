@@ -49,7 +49,7 @@
                     <img src="{{ url('backend/img/home.png') }}" alt="">
                 </div>
                 <div class="home__data">
-                    <h1 class="home__title">Welcome to {{Session::get('homeStayName')}}</h1>
+                    <h1 class="home__title">Welcome to {{$homestayName}}</h1>
                     <p class="home__description">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aut, doloribus!</p>
                     <a href="#" class="button ">Get Started</a>
                 </div>

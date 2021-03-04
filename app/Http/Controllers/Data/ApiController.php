@@ -3,7 +3,9 @@
 namespace App\Http\Controllers\Data;
 
 use App\Http\Controllers\Controller;
+use Illuminate\Contracts\Session\Session;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Cookie;
 use Illuminate\Support\Facades\Http;
 
 class ApiController extends Controller
@@ -25,7 +27,7 @@ class ApiController extends Controller
             'night' => 1,
             'key_prop' => $value,
         ]);
-        $homstayName = json_decode($response->body())->prop->namaHomestay;
-        return redirect('/user')->with('homeStayName', $homstayName);
+        $homestayName = json_decode($response->body())->prop->namaHomestay;
+        return redirect('/user')->withCookie(Cookie::make('homestayName', $homestayName));
     }
 }
