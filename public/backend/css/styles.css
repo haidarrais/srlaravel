@@ -829,7 +829,10 @@ padding: 11px;
   font-size: var(--small-font-size);
   color: var(--body-color);
 }
-
+.app-form{
+  display: flex;
+  gap: 31px;
+}
 .app-form-group {
   margin-bottom: 15px;
 }
@@ -877,7 +880,7 @@ padding: 11px;
 .disabled{
   position: absolute;
   color: white;
-  top: 34.5%;
+  top: 51.5%;
 }
 .disabled-place{
   padding-left: 2rem;

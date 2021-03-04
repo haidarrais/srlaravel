@@ -126,7 +126,7 @@
                 <a class="next" onclick="plusSlides(1)">&#10095;</a>
             </div>
         </section>
-
+        
         <!--========== INVESTMENT ==========-->
         <div class="promo bd-container form-container hideForm" id="reach">
             <div class="screen " id="screen">
@@ -146,77 +146,82 @@
                             <span>Tell Us</span>
                             <span>Your Thought</span>
                         </div>
-                      </div>
-                      <div class="screen-body-item">
-                        <form  id="sendMessage" class="app-form" action="{{route('kirim')}}" method="POST">
+                    </div>
+                    <div class="screen-body-item">
+                        <form  id="sendMessage" class="app-form d-flex" action="{{route('kirim')}}" method="POST">
                             @csrf
-                          <div class="app-form-group">
-                            <input
-                            type="text"
-                            class="app-form-control"
-                            name="name"
-                            value="{{ old('name') }}"
-                            placeholder="NAME">
-                          </div>
-                          <div class="app-form-group">
-                            <div class="disabled">+62</div>
-                            <input
-                            type="tel"
-                            pattern="{0-9}"
-                            class="app-form-control disabled-place"
-                            name="phoneNumber"
-                            value="{{ old('phoneNumber') }}"
-                            placeholder="PHONE NUMBER" >
-                          </div>
-                          <div class="app-form-group message">
-                            <input
-                            type="text"
-                            class="app-form-control"
-                            name="message"
-                            value="{{ old('message') }}"
-                            placeholder="message"
-                            style="text-transform: unset"
-                            >
-                          </div>
-                          <div class="app-form-group message">
-                            <label for="kebersihan" class="app-form-control">Kebersihan:</label>
-                                <select id="kebersihan" name="kebersihan">
-                                    <option value="1"><?= "⭐" ?></option>
-                                    <option value="2"><?= "⭐⭐" ?></option>
-                                    <option value="3"><?= "⭐⭐⭐" ?></option>
-                                    <option value="4"><?= "⭐⭐⭐⭐" ?></option>
-                                    <option value="4"><?= "⭐⭐⭐⭐⭐" ?></option>
-                                </select>
+                            <div>
+                                <div class="app-form-group message">
+                                  <input
+                                  type="text"
+                                  class="app-form-control"
+                                  name="name"
+                                  value="{{ old('name') }}"
+                                  placeholder="NAME">
+                                </div>
+                                <div class="app-form-group message">
+                                  <div class="disabled">+62</div>
+                                  <input
+                                  type="tel"
+                                  pattern="{0-9}"
+                                  class="app-form-control disabled-place"
+                                  name="phoneNumber"
+                                  value="{{ old('phoneNumber') }}"
+                                  placeholder="PHONE NUMBER" >
+                                </div>
+                                <div class="app-form-group message">
+                                  <input
+                                  type="text"
+                                  class="app-form-control"
+                                  name="message"
+                                  value="{{ old('message') }}"
+                                  placeholder="message"
+                                  style="text-transform: unset"
+                                  >
+                                </div>                                
                             </div>
-                            <div class="app-form-group message">
-                                <label for="pelayanan" class="app-form-control">Pelayanan:</label>
-                                <select id="pelayanan" name="pelayanan">
-                                    <option value="1"><?= "⭐" ?></option>
-                                    <option value="2"><?= "⭐⭐" ?></option>
-                                    <option value="3"><?= "⭐⭐⭐" ?></option>
-                                    <option value="4"><?= "⭐⭐⭐⭐" ?></option>
-                                    <option value="4"><?= "⭐⭐⭐⭐⭐" ?></option>
-                                </select>
-                            </div>
-                            <div class="app-form-group message">
-                                <label for="lokasi" class="app-form-control">Lokasi:</label>
-                                <select id="lokasi" name="lokasi">
-                                    <option value="1"><?= "⭐" ?></option>
-                                    <option value="2"><?= "⭐⭐" ?></option>
-                                    <option value="3"><?= "⭐⭐⭐" ?></option>
-                                    <option value="4"><?= "⭐⭐⭐⭐" ?></option>
-                                    <option value="4"><?= "⭐⭐⭐⭐⭐" ?></option>
-                                </select>
-                            </div>
-                            <div class="app-form-group message">
-                                <label for="fasilitas" class="app-form-control">Fasilitas:</label>
-                                <select id="fasilitas" name="fasilitas">
-                                    <option value="1"><?= "⭐" ?></option>
-                                    <option value="2"><?= "⭐⭐" ?></option>
-                                    <option value="3"><?= "⭐⭐⭐" ?></option>
-                                    <option value="4"><?= "⭐⭐⭐⭐" ?></option>
-                                    <option value="4"><?= "⭐⭐⭐⭐⭐" ?></option>
-                                </select>
+                            <div>
+                                <div class="app-form-group message" style="margin-top: 0">
+                                    <label for="kebersihan" class="app-form-control">Kebersihan:</label>
+                                    <select id="kebersihan" name="kebersihan">
+                                        <option value="1"><?= "⭐" ?></option>
+                                        <option value="2"><?= "⭐⭐" ?></option>
+                                        <option value="3"><?= "⭐⭐⭐" ?></option>
+                                        <option value="4"><?= "⭐⭐⭐⭐" ?></option>
+                                        <option value="4"><?= "⭐⭐⭐⭐⭐" ?></option>
+                                    </select>
+                                </div>
+                                <div class="app-form-group message">
+                                    <label for="pelayanan" class="app-form-control">Pelayanan:</label>
+                                    <select id="pelayanan" name="pelayanan">
+                                        <option value="1"><?= "⭐" ?></option>
+                                        <option value="2"><?= "⭐⭐" ?></option>
+                                        <option value="3"><?= "⭐⭐⭐" ?></option>
+                                        <option value="4"><?= "⭐⭐⭐⭐" ?></option>
+                                        <option value="4"><?= "⭐⭐⭐⭐⭐" ?></option>
+                                    </select>
+                                </div>
+                                <div class="app-form-group message">
+                                    <label for="lokasi" class="app-form-control">Lokasi:</label>
+                                    <select id="lokasi" name="lokasi">
+                                        <option value="1"><?= "⭐" ?></option>
+                                        <option value="2"><?= "⭐⭐" ?></option>
+                                        <option value="3"><?= "⭐⭐⭐" ?></option>
+                                        <option value="4"><?= "⭐⭐⭐⭐" ?></option>
+                                        <option value="4"><?= "⭐⭐⭐⭐⭐" ?></option>
+                                    </select>
+                                </div>
+                                <div class="app-form-group message">
+                                    <label for="fasilitas" class="app-form-control">Fasilitas:</label>
+                                    <select id="fasilitas" name="fasilitas">
+                                        <option value="1"><?= "⭐" ?></option>
+                                        <option value="2"><?= "⭐⭐" ?></option>
+                                        <option value="3"><?= "⭐⭐⭐" ?></option>
+                                        <option value="4"><?= "⭐⭐⭐⭐" ?></option>
+                                        <option value="4"><?= "⭐⭐⭐⭐⭐" ?></option>
+                                    </select>
+                                </div>
+                                
                             </div>
                     </div>
                     <div class="app-form-group buttons">
