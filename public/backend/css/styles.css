@@ -806,8 +806,6 @@ padding: 11px;
 }
 
 .app-title {
-  display: flex;
-  flex-direction: column;
   position: relative;
   color: var(--body-color);
   font-size: 26px;
