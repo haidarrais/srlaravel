@@ -36,7 +36,11 @@
                 <span>Investment</span></a>
         </li>
 
-
+        <li class="nav-item">
+            <a class="nav-link" href="/admin/property">
+                <i class="fas fa-fw fa-dollar-sign"></i>
+                <span>Property</span></a>
+        </li>
         <hr class="sidebar-divider">
 
         <!-- Sidebar Toggler (Sidebar) -->

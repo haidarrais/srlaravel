@@ -29,7 +29,11 @@
                 <i class="fas fa-fw fa-images"></i>
                 <span>Tour Travel</span></a>
         </li>
-
+        <li class="nav-item">
+            <a class="nav-link" href="/admin/property">
+                <i class="fas fa-fw fa-dollar-sign"></i>
+                <span>Property</span></a>
+        </li>
         <li class="nav-item">
             <a class="nav-link" href="/admin/investment">
                 <i class="fas fa-fw fa-dollar-sign"></i>

@@ -50,12 +50,34 @@
                 </div>
                 <div class="home__data">
                     <h1 class="home__title">Welcome to {{$homestayName}}</h1>
-                    <p class="home__description">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aut, doloribus!</p>
-                    <a href="#" class="button ">Get Started</a>
+                    <p class="home__description">Selamat datang di Syariahrooms.
+                        Kenyamanan dan Keselamatan andan adalah prioritas kami,
+                        Kami berkomitmen memberikan pelayanan yang terbaik sesuai standart protokol kesehatan untuk tamu, staff,dan seluruh partner yang berada di Syariahrooms.
+                        <br><br>Untuk Kebutuhan anda selama menginap di Syariahrooms, bisa menghubungi di nomer petugas kami di lokasi atau klik hubungi kami</a></p>
+                    <a href="https://wa.me/6281217297131" class="button inside-fixed" style="max-width:fit-content;"><i class='bx bxl-whatsapp' style="font-size: 1.5rem;"></i><span style="margin-left:5px;">Hubungi kami</span></a>
                 </div>
             </div>
         </section>
-
+        <!--========== property ==========-->
+        <section class="promo section bd-container" id="property">
+            <h2 class="section-title">Property on Sale !!!</h2>
+            <div class="promo__container bd-grid">
+                @foreach($property as $property)
+                <div class="promo__data">
+                    <img src="{{ url('/asset/img') . '/' . $property->image }}" alt="" class="promo__img">
+                    <h3 class="travel__title">{{$property->title}}</h3>
+                    <span class="travel__category">property</span><br>
+                    <span class="travel__preci">
+                        {{ $property->price }}
+                        <span style="font-size: 10px;font-weight:400">
+                            IDR
+                        </span>
+                    </span>
+                    <a href="#" class="button travel__button"><i class='bx bxs-plane-alt'></i></a>
+                </div>
+                @endforeach
+            </div>
+        </section>
         <!--========== PROMO ==========-->
         <section class="promo section bd-container" id="promo">
             <h2 class="section-title">Program & Promo</h2>
@@ -126,7 +148,7 @@
                 <a class="next" onclick="plusSlides(1)">&#10095;</a>
             </div>
         </section>
-        
+
         <!--========== INVESTMENT ==========-->
         <div class="promo bd-container form-container hideForm" id="reach">
             <div class="screen " id="screen">
@@ -160,7 +182,7 @@
                                   placeholder="NAME">
                                 </div>
                                 <div class="app-form-group message">
-                                  <div class="disabled">+62</div>
+                                  <div class="disabled" style="margin-top:-2.6rem;">+62</div>
                                   <input
                                   type="tel"
                                   pattern="{0-9}"
@@ -178,7 +200,7 @@
                                   placeholder="message"
                                   style="text-transform: unset"
                                   >
-                                </div>                                
+                                </div>
                             </div>
                             <div>
                                 <div class="app-form-group message" style="margin-top: 0">
@@ -221,7 +243,7 @@
                                         <option value="4"><?= "⭐⭐⭐⭐⭐" ?></option>
                                     </select>
                                 </div>
-                                
+
                             </div>
                     </div>
                     <div class="app-form-group buttons">

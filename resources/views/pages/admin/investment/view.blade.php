@@ -13,7 +13,7 @@
 
         <!-- Nav Item - Dashboard -->
         <li class="nav-item">
-            <a class="nav-link" href="/admin/dashboard">
+            <a class="nav-link" href="/admin">
                 <i class="fas fa-fw fa-tachometer-alt"></i>
                 <span>Dashboard</span></a>
         </li>
@@ -29,7 +29,11 @@
                 <i class="fas fa-fw fa-images"></i>
                 <span>Tour Travel</span></a>
         </li>
-
+        <li class="nav-item">
+            <a class="nav-link" href="/admin/property">
+                <i class="fas fa-fw fa-dollar-sign"></i>
+                <span>Property</span></a>
+        </li>
         <li class="nav-item active">
             <a class="nav-link" href="/admin/investment">
                 <i class="fas fa-fw fa-dollar-sign"></i>

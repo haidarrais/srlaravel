@@ -5,6 +5,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\Content\PromoController;
 use App\Http\Controllers\Content\InvestmentController;
 use App\Http\Controllers\Content\TravelController;
+use App\Http\Controllers\Content\PropertyController;
 use App\Http\Controllers\Admin\AuthController;
 use App\Http\Controllers\BotTelegramController;
 use App\Http\Controllers\Data\ApiController;
@@ -34,9 +35,11 @@ Route::group(['middleware'=>['DoubleLogin']], function(){
 });
 Route::post('/admin/login',[AdminController::class, 'signin']);
 Route::get('/admin/logout',[AdminController::class, 'signout'])->name('logout');
-
-Route::resource('admin/promo', PromoController::class);
-Route::resource('admin/travel', TravelController::class);
-Route::resource('admin/investment', InvestmentController::class);
+Route::group(['prefix'=>'admin'], function () {
+    Route::resource('promo', PromoController::class);
+    Route::resource('property', PropertyController::class);
+    Route::resource('travel', TravelController::class);
+    Route::resource('investment', InvestmentController::class);
+});
 
 Route::post('/kirim', [BotTelegramController::class, 'kirimPesan'])->name('kirim');
