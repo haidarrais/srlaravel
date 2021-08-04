@@ -100,14 +100,17 @@ const sr = ScrollReveal({
     reset: true,
 });
 
-sr.reveal(`.home__data, .home__img,
+sr.reveal(
+    `.home__data, .home__img,.property__data,property__img,
            .promo__data,
            .travel__content,
            .slideshow-container,
-           .footer__content`, {
-    origin: 'top',
-    interval: 200,
-})
+           .footer__content`,
+    {
+        origin: "top",
+        interval: 200,
+    }
+);
 
 sr.reveal(`.share__img,`, {
     origin: 'left'

@@ -336,6 +336,51 @@ img {
   font-weight: normal;
 }
 
+
+/*========== property ==========*/
+.property__container {
+  grid-template-columns:repeat(auto-fit, minmax(230px, 300px));
+}
+.property__data {
+  position: relative;
+  text-align: center;
+  background-color: var(--container-color);
+  box-shadow: 0 2px 6px rgba(65, 11, 16, 0.15);
+  border-radius: 1rem;
+}
+.property__data:hover {
+  box-shadow: 0 3px 12px rgba(65, 11, 16, 0.15);
+}
+.property__img {
+  height: 200px;
+  overflow: hidden;
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+}
+.property__title {
+  font-size: var(--normal-font-size);
+  margin-bottom: var(--mb-1);
+}
+.property__button {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  font-size: 1.25rem;
+  padding: 0.5rem 0.625rem;
+  border-radius: 1rem 0 1rem 0;
+}
+.property__deadline {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  padding: 0.5rem 0.625rem;
+  border-radius: 0 1rem 0 1rem;
+  font-size: var(--small-font-size);
+  font-weight: normal;
+}
+
 /*========== TRAVEL ==========*/
 .travel__container {
   grid-template-columns:repeat(2, 1fr);

@@ -29,6 +29,8 @@
             <div class="nav__menu" id="nav-menu">
                 <ul class="nav__list">
                     <li class="nav__item"><a href="#home" class="nav__link active-link">HOME</a></li>
+                    <li class="nav__item" style="display:none"><a href="#property" class="nav__link" hidden></a></li>
+
                     <li class="nav__item"><a href="#promo" class="nav__link">PROGRAM AND PROMO</a></li>
                     <li class="nav__item"><a href="#travel" class="nav__link">TOUR AND TRAVEL</a></li>
                     <li class="nav__item"><a href="#investment" class="nav__link">PROPERTY INVESMENT INFO</a></li>
@@ -53,27 +55,28 @@
                     <p class="home__description">Selamat datang di Syariahrooms.
                         Kenyamanan dan Keselamatan andan adalah prioritas kami,
                         Kami berkomitmen memberikan pelayanan yang terbaik sesuai standart protokol kesehatan untuk tamu, staff,dan seluruh partner yang berada di Syariahrooms.
-                        <br><br>Untuk Kebutuhan anda selama menginap di Syariahrooms, bisa menghubungi di nomer petugas kami di lokasi atau klik hubungi kami</a></p>
+                        <br><br>Untuk Kebutuhan anda selama menginap di Syariahrooms, bisa menghubungi di nomer petugas kami di lokasi atau klik hubungi kami</a>
+                    </p>
                     <a href="https://wa.me/6281217297131" class="button inside-fixed" style="max-width:fit-content;"><i class='bx bxl-whatsapp' style="font-size: 1.5rem;"></i><span style="margin-left:5px;">Hubungi kami</span></a>
                 </div>
             </div>
         </section>
         <!--========== property ==========-->
-        <section class="promo section bd-container" id="property">
+        <section class="property section bd-container" id="property">
             <h2 class="section-title">Property on Sale !!!</h2>
-            <div class="promo__container bd-grid">
+            <div class="property__container bd-grid">
                 @foreach($property as $property)
-                <div class="promo__data">
-                    <img src="{{ url('/asset/img') . '/' . $property->image }}" alt="" class="promo__img">
-                    <h3 class="travel__title">{{$property->title}}</h3>
-                    <span class="travel__category">property</span><br>
-                    <span class="travel__preci">
+                <div class="property__data">
+                    <img src="{{ url('/asset/img') . '/' . $property->image }}" alt="" class="property__img">
+                    <h3 class="property__title">{{$property->title}}</h3>
+                    <span class="property__category">property</span><br>
+                    <span class="property__preci">
                         {{ $property->price }}
                         <span style="font-size: 10px;font-weight:400">
                             IDR
                         </span>
                     </span>
-                    <a href="#" class="button travel__button"><i class='bx bxs-plane-alt'></i></a>
+                    <a href="https://wa.me/6281217297131?text=Saya%20tertarik%20dengan%20{{$property->title}}" target="_blank" class="button promo__button"><i class='bx bxs-cart'></i></a>
                 </div>
                 @endforeach
             </div>
@@ -125,7 +128,7 @@
 
 
         <!--========== INVESTMENT ==========-->
-        <section class="invest section bd-container" id="invest">
+        <section class="invest section bd-container" id="investment">
             <h2 class="section-title">Investment Info</h2>
             <div class="slideshow-container promo__container">
 
@@ -134,7 +137,7 @@
                 <div class="mySlides fade">
                     <div class="slide-control">
                         <img src="{{ url('/asset/img') . '/' . $invest->image }}" style="width:100%">
-                        <div class="image-darken"></div>
+                        <!-- <div class="image-darken"></div> -->
                         <div id="text">
                             <h2 class="invest__title">{{$invest->title}}</h2>
                             <p class="invest_description">{{$invest->description}}</p>
@@ -170,36 +173,18 @@
                         </div>
                     </div>
                     <div class="screen-body-item">
-                        <form  id="sendMessage" class="app-form d-flex" action="{{route('kirim')}}" method="POST">
+                        <form id="sendMessage" class="app-form d-flex" action="{{route('kirim')}}" method="POST">
                             @csrf
                             <div>
                                 <div class="app-form-group message">
-                                  <input
-                                  type="text"
-                                  class="app-form-control"
-                                  name="name"
-                                  value="{{ old('name') }}"
-                                  placeholder="NAME">
+                                    <input type="text" class="app-form-control" name="name" value="{{ old('name') }}" placeholder="NAME">
                                 </div>
                                 <div class="app-form-group message">
-                                  <div class="disabled" style="margin-top:-2.6rem;">+62</div>
-                                  <input
-                                  type="tel"
-                                  pattern="{0-9}"
-                                  class="app-form-control disabled-place"
-                                  name="phoneNumber"
-                                  value="{{ old('phoneNumber') }}"
-                                  placeholder="PHONE NUMBER" >
+                                    <div class="disabled" style="margin-top:-2.6rem;">+62</div>
+                                    <input type="tel" pattern="{0-9}" class="app-form-control disabled-place" name="phoneNumber" value="{{ old('phoneNumber') }}" placeholder="PHONE NUMBER">
                                 </div>
                                 <div class="app-form-group message">
-                                  <input
-                                  type="text"
-                                  class="app-form-control"
-                                  name="message"
-                                  value="{{ old('message') }}"
-                                  placeholder="message"
-                                  style="text-transform: unset"
-                                  >
+                                    <input type="text" class="app-form-control" name="message" value="{{ old('message') }}" placeholder="message" style="text-transform: unset">
                                 </div>
                             </div>
                             <div>
