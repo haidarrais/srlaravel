@@ -82,9 +82,8 @@ class TravelController extends Controller
      */
     public function edit($id)
     {
-        $where = array('id' => $id);
-        $data['travel_info'] = Travel::where($where)->first();
-        return view('pages.admin.edittraveltion', $data);
+        $data = Travel::where('id', $id)->first();
+        return view('pages.admin.travel.edit', compact('data'));
     }
 
     /**

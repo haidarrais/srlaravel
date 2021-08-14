@@ -352,7 +352,7 @@ img {
   box-shadow: 0 3px 12px rgba(65, 11, 16, 0.15);
 }
 .property__img {
-  height: 200px;
+  height: 320px;
   overflow: hidden;
   border-top-left-radius: 0.5rem;
   border-top-right-radius: 0.5rem;

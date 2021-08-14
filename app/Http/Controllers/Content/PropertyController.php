@@ -52,9 +52,8 @@ class PropertyController extends Controller
                 $insert['image'] = "$propertyImage";
                 $files->move($destinationPath, $propertyImage);
             }
-            $formattedPrice = number_format($request->get('price'), 2, ',', '.');
             $insert['title'] = $request->get('title');
-            $insert['price'] = (string)$formattedPrice;
+            $insert['price'] = $request->get('price');
             $insert['property_code'] = $request->get('property_code');
             $insert['expired'] = $request->get('expired');
             $insert['description'] = $request->get('description');
@@ -82,9 +81,8 @@ class PropertyController extends Controller
      */
     public function edit($id)
     {
-        $where = array('id' => $id);
-        $data['property_info'] = Property::where($where)->first();
-        return view('pages.admin.editpropertytion', $data);
+        $data = Property::where('id', $id)->first();
+        return view('pages.admin.property.edit', compact('data'));
     }
 
     /**

@@ -1,91 +1,95 @@
 @extends('layouts.admin')
 @section('sidebar')
-    <!-- Sidebar -->
-    <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+<!-- Sidebar -->
+<ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
-        <!-- Sidebar - Brand -->
-        <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
-            <div class="sidebar-brand-text mx-3">SyariahRooms Adm</div>
-        </a>
+    <!-- Sidebar - Brand -->
+    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+        <div class="sidebar-brand-text mx-3">SyariahRooms Adm</div>
+    </a>
 
-        <!-- Divider -->
-        <hr class="sidebar-divider my-0">
+    <!-- Divider -->
+    <hr class="sidebar-divider my-0">
 
-        <!-- Nav Item - Dashboard -->
-        <li class="nav-item">
-            <a class="nav-link" href="/admin">
-                <i class="fas fa-fw fa-tachometer-alt"></i>
-                <span>Dashboard</span></a>
-        </li>
+    <!-- Nav Item - Dashboard -->
+    <li class="nav-item">
+        <a class="nav-link" href="/admin">
+            <i class="fas fa-fw fa-tachometer-alt"></i>
+            <span>Dashboard</span></a>
+    </li>
 
-        <li class="nav-item">
-            <a class="nav-link" href="/admin/promo">
-                <i class="fas fa-fw fa-hotel"></i>
-                <span>Promo</span></a>
-        </li>
+    <li class="nav-item">
+        <a class="nav-link" href="/admin/promo">
+            <i class="fas fa-fw fa-hotel"></i>
+            <span>Promo</span></a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="/admin/travel">
+            <i class="fas fa-fw fa-images"></i>
+            <span>Tour Travel</span></a>
+    </li>
 
-        <li class="nav-item">
-            <a class="nav-link" href="/admin/travel">
-                <i class="fas fa-fw fa-images"></i>
-                <span>Tour Travel</span></a>
-        </li>
+    <li class="nav-item ">
+        <a class="nav-link" href="/admin/property">
+            <i class="fas fa-fw fa-home"></i>
+            <span>Property</span></a>
+    </li>
+    <li class="nav-item active">
+        <a class="nav-link" href="/admin/investment">
+            <i class="fas fa-fw fa-dollar-sign"></i>
+            <span>Investment</span></a>
+    </li>
 
-        <li class="nav-item active">
-            <a class="nav-link" href="/admin/investment">
-                <i class="fas fa-fw fa-dollar-sign"></i>
-                <span>Investment/<strong>Add</strong></span></a>
-        </li>
 
+    <hr class="sidebar-divider">
 
-        <hr class="sidebar-divider">
+    <!-- Sidebar Toggler (Sidebar) -->
+    <div class="text-center d-none d-md-inline">
+        <button class="rounded-circle border-0" id="sidebarToggle"></button>
+    </div>
 
-        <!-- Sidebar Toggler (Sidebar) -->
-        <div class="text-center d-none d-md-inline">
-            <button class="rounded-circle border-0" id="sidebarToggle"></button>
-        </div>
-
-    </ul>
-    <!-- End of Sidebar -->
+</ul>
+<!-- End of Sidebar -->
 @endsection
 @section('content')
 <div class="container">
     <h2 style="margin-top: 12px;" class="text-center">Add Content</a></h2>
     <br>
     <form action="{{ route('investment.store') }}" method="POST" name="add_content" enctype="multipart/form-data">
-    {{ csrf_field() }}
-    <div class="row">
-    <div class="col-md-12">
-    <div class="form-group">
-    <strong>Title</strong>
-    <input type="text" name="title" class="form-control" placeholder="Enter Title">
-    <span class="text-danger">{{ $errors->first('title') }}</span>
-    </div>
-    </div>
-    <div class="col-md-12">
-    <div class="form-group">
-    <strong>Content Code</strong>
-    <input type="text" name="investment_code" class="form-control" placeholder="Enter Content Code">
-    <span class="text-danger">{{ $errors->first('investment_code') }}</span>
-    </div>
-    </div>
-    <div class="col-md-12">
-    <div class="form-group">
-    <strong>Description</strong>
-    <textarea class="form-control" col="4" name="description" placeholder="Enter Description"></textarea>
-    <span class="text-danger">{{ $errors->first('description') }}</span>
-    </div>
-    </div>
-    <div class="col-md-12">
-    <div class="form-group">
-    <strong>Content Image</strong>
-    <input type="file" name="image" class="form-control" placeholder="">
-    <span class="text-danger">{{ $errors->first('image') }}</span>
-    </div>
-    </div>
-    <div class="col-md-12">
-    <button type="submit" class="btn btn-primary">Submit</button>
-    </div>
-    </div>
+        {{ csrf_field() }}
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group">
+                    <strong>Title</strong>
+                    <input type="text" name="title" class="form-control" placeholder="Enter Title">
+                    <span class="text-danger">{{ $errors->first('title') }}</span>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="form-group">
+                    <strong>Content Code</strong>
+                    <input type="text" name="investment_code" class="form-control" placeholder="Enter Content Code">
+                    <span class="text-danger">{{ $errors->first('investment_code') }}</span>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="form-group">
+                    <strong>Description</strong>
+                    <textarea class="form-control" col="4" name="description" placeholder="Enter Description"></textarea>
+                    <span class="text-danger">{{ $errors->first('description') }}</span>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="form-group">
+                    <strong>Content Image</strong>
+                    <input type="file" name="image" class="form-control" placeholder="">
+                    <span class="text-danger">{{ $errors->first('image') }}</span>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+        </div>
     </form>
 </div>
 @endsection

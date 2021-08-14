@@ -76,7 +76,7 @@
                             IDR
                         </span>
                     </span>
-                    <a href="https://wa.me/6281217297131?text=Saya%20tertarik%20dengan%20{{$property->title}}" target="_blank" class="button promo__button"><i class='bx bxs-cart'></i></a>
+                    <a href="https://wa.me/6281217297131?text=Saya%20tertarik%20dengan%20properti%20{{$property->title}}" target="_blank" class="button promo__button"><i class='bx bxs-cart'></i></a>
                 </div>
                 @endforeach
             </div>
@@ -138,10 +138,10 @@
                     <div class="slide-control">
                         <img src="{{ url('/asset/img') . '/' . $invest->image }}" style="width:100%">
                         <!-- <div class="image-darken"></div> -->
-                        <div id="text">
+                        <!-- <div id="text">
                             <h2 class="invest__title">{{$invest->title}}</h2>
                             <p class="invest_description">{{$invest->description}}</p>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
                 @endforeach

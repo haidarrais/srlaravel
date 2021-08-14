@@ -79,9 +79,8 @@ class PromoController extends Controller
      */
     public function edit($id)
     {
-        $where = array('id' => $id);
-        $data['promo_info'] = Promo::where($where)->first();
-        return view('pages.admin.editpromotion', $data);
+        $data = Promo::where('id', $id)->first();
+        return view('pages.admin.promo.edit', compact('data'));
     }
 
     /**
@@ -108,7 +107,7 @@ class PromoController extends Controller
             $update['title'] = $request->get('title');
             $update['promo_code'] = $request->get('promo_code');
             $update['description'] = $request->get('description');
-            Promo::where('id',$id)->update($update);
+            $oke = Promo::where('id',$id)->update($update);
             return FacadesRedirect::to('/admin/promo')->with('success','Great! Promo updated successfully');
     }
 

@@ -20,7 +20,7 @@ class CreateTravelsTable extends Migration
             $table->string('price');
             $table->text('image');
             $table->text('description');
-            $table->date('expired');
+            $table->date('expired')->nullable();
             $table->timestamps();
         });
     }
