@@ -79,8 +79,8 @@ class InvestmentController extends Controller
     public function edit($id)
     {
         $where = array('id' => $id);
-        $data['investment_info'] = Investment::where($where)->first();
-        return view('pages.admin.editinvestmenttion', $data);
+        $data = Investment::where($where)->first();
+        return view('pages.admin.investment.edit', compact('data'));
     }
 
     /**
