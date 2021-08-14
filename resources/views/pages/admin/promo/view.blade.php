@@ -76,7 +76,7 @@
                         <td>{{ $promo->id }}</td>
                         <td>{{ $promo->title }}</td>
                         <td>{{ $promo->promo_code }}</td>
-                        <td>{{ $promo->description }}</td>
+                        <td>{!! $promo->description !!}</td>
                         <td><img src="{{ url('asset/img/', $promo->image) }}" alt="" width="200rem"></td>
                         <td>{{ date('Y-m-d', strtotime($promo->created_at)) }}</td>
                         <td><a href="{{ route('promo.edit',$promo->id)}}" class="btn btn-primary">Edit</a></td>

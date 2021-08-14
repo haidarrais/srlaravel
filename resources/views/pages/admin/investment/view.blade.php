@@ -76,7 +76,7 @@
                         <td>{{ $investment->id }}</td>
                         <td>{{ $investment->title }}</td>
                         <td>{{ $investment->investment_code }}</td>
-                        <td>{{ $investment->description }}</td>
+                        <td>{!! $investment->description !!}</td>
                         <td><img src="{{ url('asset/img/', $investment->image) }}" alt="" width="200rem"></td>
                         <td>{{ date('Y-m-d', strtotime($investment->created_at)) }}</td>
                         <td><a href="{{ route('investment.edit',$investment->id)}}" class="btn btn-primary">Edit</a></td>

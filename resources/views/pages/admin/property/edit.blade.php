@@ -83,7 +83,8 @@
       <div class="col-md-12">
         <div class="form-group">
           <strong>Description</strong>
-          <textarea class="form-control" col="4" name="description">{{$data->description}}</textarea>
+          <textarea id="editor" class="form-control" col="4" name="description" placeholder="Enter Description">{{$data->description}}</textarea>
+          <!-- <textarea class="form-control" col="4" name="description">{{$data->description}}</textarea> -->
           <span class="text-danger">{{ $errors->first('description') }}</span>
         </div>
       </div>
@@ -95,14 +96,14 @@
         </div>
       </div> -->
       <div class="col-md-12">
-          <div class="form-group">
-            <strong>Content Image</strong>
-            <input type="file" name="image" class="form-control" placeholder="">
-            <span class="text-danger">{{ $errors->first('image') }}</span>
-          </div>
-          <div class="form-group">
-            <img src="{{ asset('asset/img/'.$data->image) }}" alt="" weight="100px" height="100px">
-          </div>
+        <div class="form-group">
+          <strong>Content Image</strong>
+          <input type="file" name="image" class="form-control" placeholder="">
+          <span class="text-danger">{{ $errors->first('image') }}</span>
+        </div>
+        <div class="form-group">
+          <img src="{{ asset('asset/img/'.$data->image) }}" alt="" weight="100px" height="100px">
+        </div>
         <div class="col-md-12">
           <button type="submit" class="btn btn-primary">Submit</button>
         </div>

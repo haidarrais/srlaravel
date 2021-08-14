@@ -78,7 +78,7 @@
                         <td>{{ $travel->title }}</td>
                         <td>{{ $travel->travel_code }}</td>
                         <td>{{ $travel->price }}</td>
-                        <td>{{ $travel->description }}</td>
+                        <td>{!! $travel->description !!}</td>
                         <td><img src="{{ url('asset/img/', $travel->image) }}" alt="" width="200rem"></td>
                         <td>{{ date('Y-m-d', strtotime($travel->created_at)) }}</td>
                         <td><a href="{{ route('travel.edit',$travel->id)}}" class="btn btn-primary">Edit</a></td>

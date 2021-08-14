@@ -83,7 +83,8 @@
       <div class="col-md-12">
         <div class="form-group">
           <strong>Description</strong>
-          <textarea class="form-control" col="4" name="description">{{$data->description}}</textarea>
+          <textarea id="editor" class="form-control" col="4" name="description" placeholder="Enter Description">{{$data->description}}</textarea>
+          <!-- <textarea class="form-control" col="4" name="description">{{$data->description}}</textarea> -->
           <span class="text-danger">{{ $errors->first('description') }}</span>
         </div>
       </div>

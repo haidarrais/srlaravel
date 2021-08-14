@@ -8,9 +8,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-
+    <script src="https://cdn.tiny.cloud/1/b77psby9ah5vvc1tqe4ny53m2of36i0f16zwnrrohxtljygy/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
     <title>SB Admin 2 - Dashboard</title>
-
+    <script>
+        tinymce.init({
+            selector: 'textarea#editor', // change this value according to the HTML
+            toolbar: 'undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | outdent indent'
+        });
+    </script>
     @include('includes.style')
 
 </head>
@@ -49,8 +54,7 @@
     </a>
 
     <!-- Logout Modal-->
-    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
+    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -69,7 +73,7 @@
     </div>
 
     @include('includes.script')
-
+    @yield('script')
 </body>
 
 </html>

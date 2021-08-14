@@ -7,7 +7,9 @@
 
     <!--========== BOX ICONS ==========-->
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
-    <!--========== CSS ==========-->
+    <script src="{{ url('backend/vendor/jquery/jquery.min.js') }}"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
     <link rel="stylesheet" href="{{ url('backend/css/styles.css') }}">
 
     <title>Syariahrooms Hospitality</title>
@@ -54,10 +56,14 @@
                     <h1 class="home__title">Welcome to {{$homestayName}}</h1>
                     <p class="home__description">Selamat datang di Syariahrooms.
                         Kenyamanan dan Keselamatan andan adalah prioritas kami,
-                        Kami berkomitmen memberikan pelayanan yang terbaik sesuai standart protokol kesehatan untuk tamu, staff,dan seluruh partner yang berada di Syariahrooms.
-                        <br><br>Untuk Kebutuhan anda selama menginap di Syariahrooms, bisa menghubungi di nomer petugas kami di lokasi atau klik hubungi kami</a>
+                        Kami berkomitmen memberikan pelayanan yang terbaik sesuai standart protokol kesehatan untuk
+                        tamu, staff,dan seluruh partner yang berada di Syariahrooms.
+                        <br><br>Untuk Kebutuhan anda selama menginap di Syariahrooms, bisa menghubungi di nomer petugas
+                        kami di lokasi atau klik hubungi kami</a>
                     </p>
-                    <a href="https://wa.me/6281217297131" class="button inside-fixed" style="max-width:fit-content;"><i class='bx bxl-whatsapp' style="font-size: 1.5rem;"></i><span style="margin-left:5px;">Hubungi kami</span></a>
+                    <a href="https://wa.me/6281217297131" class="button inside-fixed" style="max-width:fit-content;"><i
+                            class='bx bxl-whatsapp' style="font-size: 1.5rem;"></i><span
+                            style="margin-left:5px;">Hubungi kami</span></a>
                 </div>
             </div>
         </section>
@@ -76,7 +82,8 @@
                             IDR
                         </span>
                     </span>
-                    <a href="https://wa.me/6281217297131?text=Saya%20tertarik%20dengan%20properti%20{{$property->title}}" target="_blank" class="button promo__button"><i class='bx bxs-cart'></i></a>
+                    <a href="https://wa.me/6281217297131?text=Saya%20tertarik%20dengan%20properti%20{{$property->title}}"
+                        target="_blank" class="button promo__button" style="cursor: pointer"><i class='bx bxs-cart'></i></a>
                 </div>
                 @endforeach
             </div>
@@ -85,9 +92,9 @@
         <section class="promo section bd-container" id="promo">
             <h2 class="section-title">Program & Promo</h2>
             <div class="promo__container bd-grid">
-                @foreach($promo as $promo)
+                @foreach($promo as $key => $promos)
                 <?php
-                $datestr = $promo->expired;
+                $datestr = $promos->expired;
                 $date = strtotime($datestr); //Converted to a PHP date (a second count)
 
                 //Calculate difference
@@ -96,37 +103,52 @@
                 $hours = round(($diff - $days * 60 * 60 * 24) / (60 * 60));
                 ?>
                 <div class="promo__data">
-                    <img src="{{ url('/asset/img') . '/' . $promo->image }}" alt="" class="promo__img">
-                    <h3 class="promo__title" style="margin-bottom: 40px">{{$promo->title}}</h3>
+                    <img src="{{ url('/asset/img') . '/' . $promos->image }}" alt="" class="promo__img">
+                    <h3 class="promo__title" style="margin-bottom: 40px">{{$promos->title}}</h3>
                     <div href="#" class="button promo__deadline">{{ $days . 'hari ' . $hours. 'jam' }}</i></div>
-                    <a href="#" class="button promo__button"><i class='bx bxs-cart'></i></a>
+                    <a class="button promo__button" id="promoModalButton{{$key}}" style="cursor: pointer"><i class='bx bxs-cart'></i></a>
                 </div>
                 @endforeach
             </div>
         </section>
+        @foreach($promo as $key => $promos)
+        <div id="promoModal{{$key}}" class="modal">
+            <h3 class="travel__title">{{$promos->title}}</h3>
+            <p>{!!$promos->description!!}</p>
+           <a href="https://wa.me/6281217297131?text=Saya%20tertarik%20dengan%20{{$promos->title}}" target="_blank"
+                class="button promo__button" style="cursor: pointer;border-radius:1rem 0 8px 0"><i class='bx bxl-whatsapp'></i></a>
+        </div>
+        @endforeach
         <!--========== TRAVEL ==========-->
         <section class="promo section bd-container" id="travel">
             <h2 class="section-title">Tour and Travel</h2>
             <div class="promo__container bd-grid">
-                @foreach($travel as $travel)
+                @foreach($travel as $key => $travels)
                 <div class="promo__data">
-                    <img src="{{ url('/asset/img') . '/' . $travel->image }}" alt="" class="promo__img">
-                    <h3 class="travel__title">{{$travel->title}}</h3>
+                    <img src="{{ url('/asset/img') . '/' . $travels->image }}" alt="" class="promo__img">
+                    <h3 class="travel__title">{{$travels->title}}</h3>
                     <span class="travel__category">travel</span><br>
                     <span class="travel__preci">
-                        {{ $travel->price }}
+                        {{ $travels->price }}
                         <span style="font-size: 10px;font-weight:400">
                             IDR
                         </span>
                     </span>
-                    <a href="#" class="button travel__button"><i class='bx bxs-plane-alt'></i></a>
+                    <div class="button travel__button" data-toggle="modal" id="travelModalButton{{$key}}"><i
+                            class='bx bxs-plane-alt'></i></div>
                 </div>
                 @endforeach
             </div>
         </section>
-
-
-
+        @foreach($travel as $key => $travels)
+        <div id="travelModal{{$key}}" class="modal">
+           <h3 class="travel__title">{{$travels->title}}</h3>
+          <p>{!!$travels->description!!}</p>
+        <a href="https://wa.me/6281217297131?text=Saya%20tertarik%20dengan%20{{$travels->title}}" target="_blank"
+            class="button promo__button" style="cursor: pointer;border-radius:1rem 0 8px 0"><i class='bx bxl-whatsapp'></i></a>
+        </div>            
+        @endforeach
+        
         <!--========== INVESTMENT ==========-->
         <section class="invest section bd-container" id="investment">
             <h2 class="section-title">Investment Info</h2>
@@ -137,11 +159,6 @@
                 <div class="mySlides fade">
                     <div class="slide-control">
                         <img src="{{ url('/asset/img') . '/' . $invest->image }}" style="width:100%">
-                        <!-- <div class="image-darken"></div> -->
-                        <!-- <div id="text">
-                            <h2 class="invest__title">{{$invest->title}}</h2>
-                            <p class="invest_description">{{$invest->description}}</p>
-                        </div> -->
                     </div>
                 </div>
                 @endforeach
@@ -151,6 +168,7 @@
                 <a class="next" onclick="plusSlides(1)">&#10095;</a>
             </div>
         </section>
+
 
         <!--========== INVESTMENT ==========-->
         <div class="promo bd-container form-container hideForm" id="reach">
@@ -177,14 +195,18 @@
                             @csrf
                             <div>
                                 <div class="app-form-group message">
-                                    <input type="text" class="app-form-control" name="name" value="{{ old('name') }}" placeholder="NAME">
+                                    <input type="text" class="app-form-control" name="name" value="{{ old('name') }}"
+                                        placeholder="NAME">
                                 </div>
                                 <div class="app-form-group message">
-                                    <div class="disabled" style="margin-top:-2.6rem;">+62</div>
-                                    <input type="tel" pattern="{0-9}" class="app-form-control disabled-place" name="phoneNumber" value="{{ old('phoneNumber') }}" placeholder="PHONE NUMBER">
+                                    <div class="disabled">+62</div>
+                                    <input type="tel" pattern="{0-9}" class="app-form-control disabled-place"
+                                        name="phoneNumber" value="{{ old('phoneNumber') }}" placeholder="PHONE NUMBER">
                                 </div>
                                 <div class="app-form-group message">
-                                    <input type="text" class="app-form-control" name="message" value="{{ old('message') }}" placeholder="message" style="text-transform: unset">
+                                    <input type="text" class="app-form-control" name="message"
+                                        value="{{ old('message') }}" placeholder="message"
+                                        style="text-transform: unset">
                                 </div>
                             </div>
                             <div>
@@ -282,9 +304,31 @@
             </div>
         </div>
 
-        <p class="footer__copy">&#169; <span id="years" onload="yearsUpdate()"></span> Alfath Academy. All right reserved</p>
+        <p class="footer__copy">&#169; <span id="years" onload="yearsUpdate()"></span> Alfath Academy. All right
+            reserved</p>
     </footer>
+    <script src="https://unpkg.com/micromodal/dist/micromodal.min.js"></script>
 
+    <!-- Core plugin JavaScript-->
+    <script src="{{ url('backend/vendor/jquery-easing/jquery.easing.min.js') }}"></script>
+    @foreach ($travel as $key => $travels)
+    <script>
+        $('#travelModalButton{{$key}}').on('click', () => {
+          $('#travelModal{{$key}}').modal({
+              fadeDuration:250
+          })
+        });
+    </script>
+    @endforeach
+    @foreach ($promo as $key => $promos)
+        <script>
+            $('#promoModalButton{{$key}}').on('click', () => {
+                  $('#promoModal{{$key}}').modal({
+                      fadeDuration:250
+                  })
+                });
+        </script>
+        @endforeach
     <!--========== SCROLL REVEAL ==========-->
     <script src="https://unpkg.com/scrollreveal"></script>
     <script>
@@ -293,6 +337,7 @@
     <!--========== MAIN JS ==========-->
     <script src="{{ url('backend/js/main.js') }}"></script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
     @if(session()->has('user'))
     <div class="alert alert-success">
         <script>

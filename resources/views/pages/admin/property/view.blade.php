@@ -78,7 +78,7 @@
                         <td>{{ $prop->title }}</td>
                         <td>{{ $prop->property_code }}</td>
                         <td>{{ $prop->price }}</td>
-                        <td>{{ $prop->description }}</td>
+                        <td>{!! $prop->description !!}</td>
                         <td><img src="{{ url('asset/img/', $prop->image) }}" alt="" width="200rem"></td>
                         <td>{{ date('Y-m-d', strtotime($prop->created_at)) }}</td>
                         <td><a href="{{ route('property.edit',$prop->id)}}" class="btn btn-primary">Edit</a></td>
